@@ -84,6 +84,11 @@ export default function IntegrationBubbles() {
     { name: 'LinkedIn Ads', color: '#06b6d4', id: 'linkedin' },
     { name: 'X', color: '#06b6d4', id: 'x' },
     { name: 'Hootsuite', color: '#06b6d4', id: 'hootsuite' },
+    { name: 'YouTube', color: '#06b6d4', id: 'youtube' },
+    { name: 'Instagram', color: '#06b6d4', id: 'instagram' },
+    { name: 'Facebook', color: '#06b6d4', id: 'facebook' },
+    { name: 'Twitch', color: '#06b6d4', id: 'twitch' },
+    { name: 'Kick', color: '#06b6d4', id: 'kick' },
     
     // File Storage - #14b8a6
     { name: 'Google Drive', color: '#14b8a6', id: 'gdrive' },
@@ -107,16 +112,24 @@ export default function IntegrationBubbles() {
 
   const [shuffledIntegrations] = useState(() => shuffleArray(allIntegrations));
   
-  // Organize into 4 rows with varying speeds - duplicate integrations to ensure enough for seamless loop
+  // Organize into 4 rows with equal items and consistent speeds - duplicate integrations to ensure enough for seamless loop
+  const totalIntegrations = shuffledIntegrations.length;
+  const itemsPerRow = Math.ceil(totalIntegrations / 4);
+  
+  const row1Items = shuffledIntegrations.slice(0, itemsPerRow);
+  const row2Items = shuffledIntegrations.slice(itemsPerRow, itemsPerRow * 2);
+  const row3Items = shuffledIntegrations.slice(itemsPerRow * 2, itemsPerRow * 3);
+  const row4Items = shuffledIntegrations.slice(itemsPerRow * 3);
+  
   const rows = [
-    { integrations: [...shuffledIntegrations.slice(0, 18), ...shuffledIntegrations.slice(0, 18)], speed: 180 },
-    { integrations: [...shuffledIntegrations.slice(18, 36), ...shuffledIntegrations.slice(18, 36)], speed: 175 },
-    { integrations: [...shuffledIntegrations.slice(36, 54), ...shuffledIntegrations.slice(36, 54)], speed: 185 },
-    { integrations: [...shuffledIntegrations.slice(54, 72), ...shuffledIntegrations.slice(54, 72)], speed: 178 },
+    { integrations: [...row1Items, ...row1Items], speed: 50 },
+    { integrations: [...row2Items, ...row2Items], speed: 52 },
+    { integrations: [...row3Items, ...row3Items], speed: 48 },
+    { integrations: [...row4Items, ...row4Items], speed: 51 },
   ];
 
   return (
-    <div className="w-full flex-1 overflow-hidden flex flex-col justify-center gap-5 py-6">
+    <div className="w-full flex-1 overflow-hidden flex flex-col justify-center gap-4 py-2">
       {rows.map((row, rowIndex) => {
         // Calculate the width needed for one complete set
         const itemWidth = 180; // approximate width of each bubble
@@ -124,11 +137,12 @@ export default function IntegrationBubbles() {
         const totalWidth = (itemWidth + gapWidth) * row.integrations.length / 2; // divided by 2 because we duplicated
         
         return (
-          <div key={rowIndex} className="relative overflow-hidden h-[48px]">
+          <div key={rowIndex} className="relative h-[60px]">
             <motion.div
               className="flex gap-3 absolute"
+              initial={{ x: 0 }}
               animate={{
-                x: [0, -totalWidth],
+                x: -totalWidth,
               }}
               transition={{
                 x: {

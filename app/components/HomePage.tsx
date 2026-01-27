@@ -7,18 +7,53 @@ import { Play, Check, Star, TrendingUp, Maximize2, Mail, Crown, Rocket, Quote } 
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import IntegrationBubbles from '@/app/components/IntegrationBubbles';
+import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 
 export default function HomePage() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set());
   const testimonialScrollRef = useRef<HTMLDivElement>(null);
 
   const testimonials = [
-    { name: 'Alex Rivera', role: 'CTO, Nexus FinTech', quote: "Plip's automation blueprint completely overhauled our inbound strategy. We're seeing a 300% increase in qualified leads.", color: 'from-purple-500 to-indigo-500' },
-    { name: 'Sarah Chen', role: 'Founder, EcomScale', quote: 'The transparency dashboard is a game changer. I finally know exactly where my marketing budget is going and what the ROI is in real-time.', color: 'from-pink-500 to-rose-500' },
-    { name: 'Marcus Johnson', role: 'VP of Sales, GrowthCo', quote: 'Our sales team no longer wastes time on unqualified leads. The system filters them perfectly so we only speak to buyers.', color: 'from-blue-500 to-cyan-500' },
-    { name: 'Diana Patel', role: 'CEO, Luxe Properties', quote: 'Within 90 days of launching our new campaigns with Plip, our property inquiries doubled. The lead quality has never been better.', color: 'from-emerald-500 to-teal-500' },
-    { name: 'James Mitchell', role: 'Marketing Director, TechFlow', quote: 'Plip transformed our YouTube channel from 5k to 150k subscribers in under a year. Their content strategy is data-driven and actually works.', color: 'from-orange-500 to-amber-500' }
+    { 
+      name: 'Wesley Krombel', 
+      role: 'Connecticut Realtor', 
+      quote: 'After working with Joe Teegarden on my marketing for my business it felt like a natural obligation to share. He has taught me so much and has helped expand my marketing to where it\'s not only helping my business but I actually feel more confident when speaking with new clients.', 
+      fullQuote: 'I am not someone who writes reviews or testimonials. But after working with Joe Teegarden on my marketing for my business it felt like a natural obligation. He has taught me so much and has helped expand my marketing to where it\'s not only helping my business but I actually feel more confident when speaking with new clients. My only regret is that I wish I had met Joe earlier to help me with my business. I have been shown and taught so many mind-blowing tools and strategies that have been exciting to learn. If you need any sort of marketing help in any shape or form, Joe is going to be a perfect answer for you. Super reliable, super honest and a genuine guy.',
+      service: 'Marketing & Website Design', 
+      color: 'from-violet-500 to-purple-500' 
+    },
+    {
+      name: 'Yasmine O.',
+      role: 'Florida Realtor',
+      quote: 'When I started working with Joe, I had a listing to advertise which was our "test run" to see if he was the real deal. After a short two days, my 950k listing had a serious buyer who was ready to purchase asap! As quick as the listing was put up, we were able to take it down. Our sellers were beyond happy with our turnaround!',
+      service: 'Marketing & Advertising',
+      color: 'from-rose-500 to-pink-500'
+    },
+    {
+      name: 'Gianluca K.',
+      role: 'California Realtor',
+      quote: 'For the first few weeks with Plip, we didn\'t see much of a result. Joe communicated with us on everything that was being worked on and, through a lot of effort, everything clicked and we started seeing results faster than we had ever seen.',
+      fullQuote: 'For the first few weeks with Plip, we didn\'t see much of a result. Joe communicated with us on everything that was being worked on and, through a lot of effort, everything clicked and we started seeing results faster than we had ever seen. We have been with Plip for 5 months so far, we had 3 closings in our last month that were directly from Plip, and we have 16 more in the pipeline across the next 4 months. Definitely give Plip and Joe a try!',
+      service: 'Marketing & Advertising',
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      name: 'Aarav R.',
+      role: 'Marketing Agency Owner',
+      quote: 'A big thanks to Joe and his team for being straightforward and full of clarity. Without Ripple Effect, my marketing agency would have stayed how it was; stagnant and dying. After learning from Joe, I can now call my agency a business, not just a hobby.',
+      service: 'Plip For Business Consulting',
+      color: 'from-teal-500 to-emerald-500'
+    },
+    {
+      name: 'Chris R.',
+      role: 'Texas Realtor',
+      quote: 'The thing I liked about Joe and his company over the others is his willingness to help and genuinely caring about the people he works with. They are very quick to respond when I have questions or want to try something new.',
+      fullQuote: 'The thing I liked about Joe and his company over the others is his willingness to help and genuinely caring about the people he works with. They are very quick to respond when I have questions or want to try something new. I always feel like things are under control for all my marketing and now I don\'t have to stress over it all. We recently closed on a 400k deal provided by Plip that was basically 25x my investment for the month. If that sounds good to you, talk to Joe.',
+      service: 'Marketing & Advertising',
+      color: 'from-amber-500 to-orange-500'
+    }
   ];
 
   // Handle hash navigation for testimonials section
@@ -53,6 +88,18 @@ export default function HomePage() {
       const newIndex = Math.round(scrollPosition / cardWidth);
       setActiveTestimonial(newIndex);
     }
+  };
+
+  const toggleTestimonial = (index: number) => {
+    setExpandedTestimonials(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -107,7 +154,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
                     <Star className="w-4 h-4 text-[#f472b6] fill-[#f472b6]" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-sm">6+ Years</span>
+                      <span className="text-white font-bold text-sm">8+ Years</span>
                       <span className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Experience</span>
                     </div>
                   </div>
@@ -343,35 +390,67 @@ export default function HomePage() {
           </div>
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" ref={testimonialScrollRef} onScroll={handleTestimonialScroll}>
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className={`snap-center shrink-0 w-[300px] md:w-[450px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:border-[#3b82f6]/30 transition-colors flex flex-col justify-between ${activeTestimonial === index ? 'active' : ''}`}>
-                <div>
-                  <div className="flex gap-4 items-start mb-6">
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} shadow-lg`}></div>
-                    <div>
-                      <p className="text-white font-bold">{testimonial.name}</p>
-                      <p className="text-white/40 text-sm">{testimonial.role}</p>
+            {testimonials.map((testimonial, index) => {
+              const isExpanded = expandedTestimonials.has(index);
+              const hasFullQuote = testimonial.fullQuote && testimonial.fullQuote !== testimonial.quote;
+              
+              return (
+                <Card key={index} className={`snap-center shrink-0 w-[300px] md:w-[450px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:border-[#3b82f6]/30 transition-colors flex flex-col justify-between ${activeTestimonial === index ? 'active' : ''}`}>
+                  <div>
+                    <div className="flex gap-4 items-start mb-6">
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} shadow-lg`}></div>
+                      <div className="flex-1">
+                        <p className="text-white font-bold">{testimonial.name}</p>
+                        <p className="text-white/40 text-sm">{testimonial.role}</p>
+                        {testimonial.service && (
+                          <p className="text-[#3b82f6]/70 text-xs mt-1">Uses Plip For {testimonial.service}</p>
+                        )}
+                      </div>
+                      <Quote className="w-6 h-6 text-[#3b82f6]/50 ml-auto shrink-0" />
                     </div>
-                    <Quote className="w-6 h-6 text-[#3b82f6]/50 ml-auto" />
+                    <p className="text-white/80 text-lg leading-relaxed">
+                      {isExpanded && hasFullQuote ? testimonial.fullQuote : testimonial.quote}
+                    </p>
+                    {hasFullQuote && (
+                      <button 
+                        onClick={() => toggleTestimonial(index)}
+                        className="text-[#3b82f6] text-sm font-semibold mt-3 hover:text-[#60a5fa] transition-colors"
+                      >
+                        {isExpanded ? 'See less' : 'See more'}
+                      </button>
+                    )}
                   </div>
-                  <p className="text-white/80 text-lg leading-relaxed">{testimonial.quote}</p>
-                </div>
-                <div className="mt-6 pt-6 border-t border-white/5 flex items-center gap-2">
-                  <div className="flex text-yellow-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-500" />
-                    ))}
+                  <div className="mt-6 pt-6 border-t border-white/5 flex items-center gap-2">
+                    <div className="flex text-yellow-500">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-500" />
+                      ))}
+                    </div>
+                    <span className="text-xs text-white/30 font-bold uppercase tracking-widest">Verified Client</span>
                   </div>
-                  <span className="text-xs text-white/30 font-bold uppercase tracking-widest">Verified Client</span>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
 
           <div className="flex justify-center gap-4 mt-4">
             {testimonials.map((_, index) => (
               <button key={index} className={`w-4 h-4 rounded-full ${activeTestimonial === index ? 'bg-[#3b82f6]' : 'bg-white/50 border border-white/10'}`} onClick={() => scrollToTestimonial(index)}></button>
             ))}
+          </div>
+        </section>
+
+        {/* Trusted Brands */}
+        <section className="w-full max-w-[1200px] mx-auto px-6 py-12">
+          <div className="text-center mb-8">
+            <p className="text-white/40 text-sm font-bold uppercase tracking-widest">Trusted by</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 opacity-60 hover:opacity-100 transition-opacity duration-300">
+            <ImageWithFallback src="figma:asset/b843d02da3cbc76f03bf80975cd7ebfdbb2098f4.png" alt="Whimsy Lanyards" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
+            <ImageWithFallback src="figma:asset/7fac7a7ce9c7b6c7148fcc4c0b1c9a4d595a7c19.png" alt="StrataGym" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
+            <ImageWithFallback src="figma:asset/e0d7df030a6032fe190738ad5aff75d0c9fc152e.png" alt="Realtor" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
+            <ImageWithFallback src="figma:asset/f9a7005f0cd142b0f65fb47d61beda2bbdb3f4de.png" alt="Noblemen" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
+            <ImageWithFallback src="figma:asset/83df48a0c6a812897a6d8b7eff8b54b322479a68.png" alt="Sarkisian Jewellery" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
           </div>
         </section>
 

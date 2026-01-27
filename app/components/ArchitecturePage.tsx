@@ -18,16 +18,16 @@ export default function ArchitecturePage() {
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#f472b6] blur-[100px] opacity-20 top-[-200px] right-[-100px]"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#60a5fa] blur-[100px] opacity-20 bottom-[-200px] left-[-100px]"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-purple-900/40 blur-[100px] opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#f472b6] blur-[120px] opacity-20 -top-40 -right-40"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#60a5fa] blur-[120px] opacity-20 top-1/3 -left-60"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-purple-500/30 blur-[100px] opacity-20 bottom-20 right-1/4"></div>
       </div>
 
       <div className="relative z-10">
         <Navigation />
 
         {/* Hero Section */}
-        <section className="w-full max-w-[1440px] mx-auto px-6 pt-24 pb-40 lg:pt-40 lg:pb-52 text-center bg-gradient-to-b from-transparent via-[#050505]/20 to-[#050505]">
+        <section className="w-full px-6 pt-24 pb-40 lg:pt-40 lg:pb-52 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#60a5fa] text-xs font-bold uppercase tracking-[0.2em] mb-4">
               Building Legacies Together
@@ -61,8 +61,8 @@ export default function ArchitecturePage() {
         <section className="w-full bg-[#050505] py-32 overflow-hidden relative">
           <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Mission */}
-            <div className="relative">
-              <span className="text-stroke text-8xl font-black absolute -top-20 -left-10 opacity-20 pointer-events-none select-none">
+            <div className="relative overflow-hidden">
+              <span className="text-stroke text-8xl font-black absolute -top-20 left-0 opacity-20 pointer-events-none select-none">
                 MISSION
               </span>
               <div className="relative z-10 space-y-8">
@@ -75,19 +75,19 @@ export default function ArchitecturePage() {
                 </p>
                 <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10">
                   <p className="text-white font-medium text-lg mb-4">
-                    "Plip didn't just give us a tool; they redefined how we think about our daily operations. We've reclaimed 40 hours a week."
+                    "Joe has taught me so much and has helped expand my marketing to where it's not only helping my business but I actually feel more confident when speaking with new clients."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gray-800"></div>
-                    <span className="text-sm font-bold text-white/40">Real Estate Group, Partner since 2021</span>
+                    <span className="text-sm font-bold text-white/40">Wesley Krombel, Connecticut Realtor</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Vision */}
-            <div className="relative">
-              <span className="text-stroke text-8xl font-black absolute -top-20 -left-10 opacity-20 pointer-events-none select-none">
+            <div className="relative overflow-hidden">
+              <span className="text-stroke text-8xl font-black absolute -top-20 left-0 opacity-20 pointer-events-none select-none">
                 VISION
               </span>
               <div className="relative z-10 space-y-8">
@@ -100,11 +100,11 @@ export default function ArchitecturePage() {
                 </p>
                 <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10">
                   <p className="text-white font-medium text-lg mb-4">
-                    "The ROI was immediate. The long-term architecture they built for us is now the backbone of our national expansion."
+                    "We recently closed on a 400k deal provided by Plip that was basically 25x my investment for the month. I always feel like things are under control for all my marketing."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gray-800"></div>
-                    <span className="text-sm font-bold text-white/40">Market Leader, Partner since 2019</span>
+                    <span className="text-sm font-bold text-white/40">Chris R., Texas Realtor</span>
                   </div>
                 </div>
               </div>
@@ -125,12 +125,12 @@ export default function ArchitecturePage() {
                 <div className="text-[10px] font-bold text-[#f472b6] tracking-widest uppercase">Leads Generated</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">50+</div>
-                <div className="text-[10px] font-bold text-[#3b82f6] tracking-widest uppercase">Agencies Scaled</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">192+</div>
+                <div className="text-[10px] font-bold text-[#3b82f6] tracking-widest uppercase">Businesses Scaled</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">300%</div>
-                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Average ROI Boost</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">43+</div>
+                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Websites Influenced</div>
               </div>
             </div>
           </div>
@@ -276,85 +276,89 @@ export default function ArchitecturePage() {
 
         {/* The Lifecycle of a Partnership */}
         <section className="w-full bg-[#050505] py-32 relative">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-20">
-              {/* Left Side */}
-              <div className="lg:w-1/3">
-                <h2 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight">
-                  The Lifecycle of a Partnership
-                </h2>
-                <p className="text-white/50 text-lg leading-relaxed mb-10">
-                  Joining Plip is more than a service contract. It's an evolution. We've mapped the typical journey our partners take as they transition from manual struggle to automated dominance.
-                </p>
-                <div className="p-8 rounded-2xl bg-[#3b82f6]/5 border border-[#3b82f6]/20 max-w-sm">
-                  <h4 className="text-[#3b82f6] font-bold mb-3 tracking-wide uppercase text-xs">Did You Know?</h4>
-                  <p className="text-white/60 text-sm leading-relaxed italic">
-                    85% of our partners achieve full system amortization within the first 6 months of implementation.
-                  </p>
+          <div className="max-w-[1400px] mx-auto px-6">
+            {/* Header */}
+            <div className="text-center mb-20">
+              <h2 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
+                Lifecycle of a Partnership
+              </h2>
+              <p className="text-white/40 text-base leading-relaxed max-w-2xl mx-auto">
+                Joining Plip is more than a service contract. It's an evolution. We've mapped the typical journey our partners take as they transition from manual struggle to automated dominance.
+              </p>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="max-w-[1200px] mx-auto mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                {/* Card 01 */}
+                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c026d3] to-[#9333ea] flex items-center justify-center font-black text-white text-lg mb-6">
+                    01
+                  </div>
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-3xl font-bold text-white mb-2">Discovery</h3>
+                    <p className="text-[#c026d3] text-xs font-bold uppercase tracking-wider mb-4">MONTH 1</p>
+                    <p className="text-white/50 text-base leading-relaxed mb-auto">
+                      Deep-tissue audit of current tech. Identification of bottlenecks and architecture of your custom growth roadmap.
+                    </p>
+                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: STRATEGIC AUDIT</p>
+                  </div>
+                </div>
+
+                {/* Card 02 */}
+                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#6366f1] to-[#4f46e5] flex items-center justify-center font-black text-white text-lg mb-6">
+                    02
+                  </div>
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-3xl font-bold text-white mb-2">Foundation</h3>
+                    <p className="text-[#6366f1] text-xs font-bold uppercase tracking-wider mb-4">MONTHS 2-4</p>
+                    <p className="text-white/50 text-base leading-relaxed mb-auto">
+                      Engineering core automation. Your 'Digital Twin' begins handling prospecting, lead management, and sync.
+                    </p>
+                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: CORE BUILD</p>
+                  </div>
+                </div>
+
+                {/* Card 03 */}
+                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] flex items-center justify-center font-black text-white text-lg mb-6">
+                    03
+                  </div>
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-3xl font-bold text-white mb-2">Optimization</h3>
+                    <p className="text-[#8b5cf6] text-xs font-bold uppercase tracking-wider mb-4">MONTHS 4-12</p>
+                    <p className="text-white/50 text-base leading-relaxed mb-auto">
+                      Pivoting to data-driven scale. Leveraging feedback loops to increase ROI and expand market footprint.
+                    </p>
+                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: SCALE & TEST</p>
+                  </div>
+                </div>
+
+                {/* Card 04 */}
+                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ec4899] to-[#d946ef] flex items-center justify-center font-black text-white text-lg mb-6">
+                    04
+                  </div>
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-3xl font-bold text-white mb-2">Legacy Ops</h3>
+                    <p className="text-[#ec4899] text-xs font-bold uppercase tracking-wider mb-4">YEAR 1+</p>
+                    <p className="text-white/50 text-base leading-relaxed mb-auto">
+                      Strategic advisory role. Your business runs as a self-sustaining asset, allowing you to focus on high-level growth.
+                    </p>
+                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: ASSET STABILITY</p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              {/* Right Side - Steps */}
-              <div className="lg:w-2/3 space-y-4">
-                {/* Step 01 */}
-                <div className="flex gap-8 p-10 rounded-3xl bg-transparent border border-transparent transition-all">
-                  <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-white text-black font-black flex items-center justify-center text-xl">
-                      01
-                    </div>
-                  </div>
-                  <div className="pt-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">Discovery & Diagnostic</h3>
-                    <p className="text-white/40 text-base leading-relaxed">
-                      Month 1: We perform a deep-tissue audit of your current tech and processes. We identify bottlenecks and architect your custom roadmap.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 02 */}
-                <div className="flex gap-8 p-10 rounded-3xl bg-transparent border border-transparent transition-all">
-                  <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-white text-black font-black flex items-center justify-center text-xl">
-                      02
-                    </div>
-                  </div>
-                  <div className="pt-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">The Foundation Build</h3>
-                    <p className="text-white/40 text-base leading-relaxed">
-                      Months 2-3: We engineer the core automation infrastructure. Your 'Digital Twin' begins to handle prospecting, lead management, and data synchronization.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 03 */}
-                <div className="flex gap-8 p-10 rounded-3xl bg-transparent border border-transparent transition-all">
-                  <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-white text-black font-black flex items-center justify-center text-xl">
-                      03
-                    </div>
-                  </div>
-                  <div className="pt-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">Optimization & Scale</h3>
-                    <p className="text-white/40 text-base leading-relaxed">
-                      Months 4-12: With the foundation solid, we pivot to optimization. We leverage data feedback loops to increase ROI and expand your market footprint.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 04 - Highlighted */}
-                <div className="flex gap-8 p-10 rounded-3xl bg-white/[0.03] border border-white/5 shadow-2xl">
-                  <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-[#3b82f6] text-white font-black flex items-center justify-center text-xl">
-                      04
-                    </div>
-                  </div>
-                  <div className="pt-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">Legacy Operations</h3>
-                    <p className="text-white/40 text-base leading-relaxed">
-                      Year 1+: The partnership matures into a strategic advisory role. Your business runs as a self-sustaining asset, allowing you to focus on high-level growth or new ventures.
-                    </p>
-                  </div>
-                </div>
+            {/* Performance Note */}
+            <div className="max-w-[800px] mx-auto">
+              <div className="p-8 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] text-center">
+                <p className="text-[#3b82f6] text-[11px] font-bold uppercase tracking-wider mb-3">PERFORMANCE NOTE</p>
+                <p className="text-white/50 text-base leading-relaxed italic">
+                  85% of our partners achieve full system amortization within the first 6 months of implementation.
+                </p>
               </div>
             </div>
           </div>

@@ -48,8 +48,8 @@ export default function SolutionsPage() {
               <span className="cotton-candy-gradient">Growth Solutions</span>
             </h1>
 
-            <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto">
-              We don't just build websites or run ads. We engineer complete growth ecosystems that attract, nurture, and convert your ideal clients automatically.
+            <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mx-auto text-center">
+              Websites • Paid Advertising • Automation • SEO • Social Media Management • Content Creation • Email Marketing • YouTube Management • Logo Design • Brand Identity
             </p>
           </div>
         </section>
@@ -421,9 +421,11 @@ export default function SolutionsPage() {
                 <p className="text-sm text-white/50 leading-relaxed mb-8 flex-grow">
                   Full-service channel growth including thumbnail design, video SEO, and engagement strategies to build a loyal subscriber base.
                 </p>
-                <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
-                  Learn more
-                </button>
+                <Link to="/services/youtube">
+                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                    Learn more
+                  </button>
+                </Link>
               </div>
 
               <div className="widget-card p-8 rounded-2xl group cursor-default flex flex-col">
@@ -434,9 +436,11 @@ export default function SolutionsPage() {
                 <p className="text-sm text-white/50 leading-relaxed mb-8 flex-grow">
                   Memorable, scalable marks that define your brand instantly. Delivered with full vector files and usage guidelines.
                 </p>
-                <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
-                  Learn more
-                </button>
+                <Link to="/services/branding">
+                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                    Learn more
+                  </button>
+                </Link>
               </div>
 
               <div className="widget-card p-8 rounded-2xl group cursor-default flex flex-col">
@@ -447,9 +451,11 @@ export default function SolutionsPage() {
                 <p className="text-sm text-white/50 leading-relaxed mb-8 flex-grow">
                   Cohesive visual systems including color palettes, typography, and voice guidelines to ensure consistency across all touchpoints.
                 </p>
-                <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
-                  Learn more
-                </button>
+                <Link to="/services/branding">
+                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                    Learn more
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
