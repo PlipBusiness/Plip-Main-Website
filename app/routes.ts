@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     Component: HomePage,
   },
   {
-    path: "/solutions",
+    path: "/services",
     Component: SolutionsPage,
   },
   {
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
     Component: ContactPage,
   },
   {
-    path: "/architecture",
+    path: "/about",
     Component: ArchitecturePage,
   },
   {

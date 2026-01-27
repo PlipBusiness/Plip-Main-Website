@@ -28,17 +28,17 @@ export default function Navigation() {
           Home
         </Link>
         <Link
-          to="/solutions"
+          to="/services"
           className={`text-sm font-medium transition-colors ${
-            isActive('/solutions') ? 'text-white' : 'text-white/70 hover:text-white'
+            isActive('/services') ? 'text-white' : 'text-white/70 hover:text-white'
           }`}
         >
           Our Services
         </Link>
         <Link
-          to="/architecture"
+          to="/about"
           className={`text-sm font-medium transition-colors ${
-            isActive('/architecture') ? 'text-white' : 'text-white/70 hover:text-white'
+            isActive('/about') ? 'text-white' : 'text-white/70 hover:text-white'
           }`}
         >
           About Us
