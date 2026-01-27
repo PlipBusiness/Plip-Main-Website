@@ -28,9 +28,27 @@ export default function ContactPage() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // Form will be handled by Netlify
-    setIsSubmitted(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form) as any).toString(),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ fullName: '', email: '', niche: 'Real Estate', message: '' });
+      } else {
+        alert('There was an error submitting your form. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an error submitting your form. Please try again.');
+    }
   };
 
   return (
