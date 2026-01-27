@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="flex items-center gap-2 text-white">
             <div className="w-5 h-5 flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <circle cx="12" cy="12" r="10" fill="url(#gradient)" />
+                <circle cx="12" cy="12" r="10" fill="url(#footer-gradient)" />
                 <path d="M8 10h8M8 14h8" stroke="white" strokeWidth="2" strokeLinecap="round" />
                 <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#3b82f6" />
                     <stop offset="100%" stopColor="#f472b6" />
                   </linearGradient>
@@ -22,7 +22,7 @@ export default function Footer() {
             <h2 className="text-white text-lg font-bold">Plip</h2>
           </div>
           <p className="text-white/40 text-sm leading-relaxed">
-            The premier data-driven infrastructure for multi-niche market leaders.
+            Full-service marketing agency specializing in websites, paid advertising, and marketing automation. 6+ years experience, 500+ projects delivered.
           </p>
         </div>
 
@@ -30,50 +30,50 @@ export default function Footer() {
           <h4 className="text-white font-bold text-sm">Services</h4>
           <ul className="space-y-2 text-white/50 text-sm">
             <li>
-              <Link to="/" className="hover:text-[#3b82f6] transition-colors">
-                Lead Systems
+              <Link to="/services/website" className="hover:text-[#3b82f6] transition-colors">
+                Website Development
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/advertising" className="hover:text-[#3b82f6] transition-colors">
+                Paid Advertising
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/automation" className="hover:text-[#3b82f6] transition-colors">
+                Marketing Automation
               </Link>
             </li>
             <li>
               <Link to="/solutions" className="hover:text-[#3b82f6] transition-colors">
-                Ad Ops
+                All Services
               </Link>
-            </li>
-            <li>
-              <Link to="/architecture" className="hover:text-[#3b82f6] transition-colors">
-                Flow Automation
-              </Link>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#3b82f6] transition-colors">
-                Data Visuals
-              </a>
             </li>
           </ul>
         </div>
 
         <div className="space-y-4">
-          <h4 className="text-white font-bold text-sm">Resources</h4>
+          <h4 className="text-white font-bold text-sm">Company</h4>
           <ul className="space-y-2 text-white/50 text-sm">
             <li>
-              <a href="#" className="hover:text-[#3b82f6] transition-colors">
-                Success Stories
-              </a>
+              <Link to="/architecture" className="hover:text-[#3b82f6] transition-colors">
+                About Us
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-[#3b82f6] transition-colors">
-                Market Reports
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#3b82f6] transition-colors">
-                API Docs
-              </a>
+              <Link to="/solutions" className="hover:text-[#3b82f6] transition-colors">
+                Our Services
+              </Link>
             </li>
             <li>
               <Link to="/contact" className="hover:text-[#3b82f6] transition-colors">
-                Support
+                Contact Us
               </Link>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#3b82f6] transition-colors">
+                Case Studies
+              </a>
             </li>
           </ul>
         </div>
@@ -95,7 +95,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-white/30 text-xs">© 2024 Plip Technologies Inc. Automation Edition.</p>
+        <p className="text-white/30 text-xs">© 2026 Plip LLC. All rights reserved.</p>
         <div className="flex gap-6 text-white/30 text-xs">
           <a href="#" className="hover:text-white transition-colors">
             Privacy Policy
