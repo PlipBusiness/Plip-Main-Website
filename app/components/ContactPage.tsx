@@ -152,9 +152,12 @@ export default function ContactPage() {
                     >
                       <option className="bg-[#0f0f0f] text-white">Real Estate</option>
                       <option className="bg-[#0f0f0f] text-white">Ecommerce</option>
-                      <option className="bg-[#0f0f0f] text-white">SaaS</option>
-                      <option className="bg-[#0f0f0f] text-white">FinTech</option>
-                      <option className="bg-[#0f0f0f] text-white">Agency</option>
+                      <option className="bg-[#0f0f0f] text-white">Retail</option>
+                      <option className="bg-[#0f0f0f] text-white">Restaurant</option>
+                      <option className="bg-[#0f0f0f] text-white">Lawncare</option>
+                      <option className="bg-[#0f0f0f] text-white">Photography/Videography</option>
+                      <option className="bg-[#0f0f0f] text-white">Home Repair/Improvement</option>
+                      <option className="bg-[#0f0f0f] text-white">Automotive</option>
                       <option className="bg-[#0f0f0f] text-white">Other</option>
                     </select>
                     <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
