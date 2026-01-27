@@ -13,7 +13,7 @@ export default function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/5 px-6 py-4 lg:px-20 backdrop-blur-md bg-[#050505]/80">
       <Link to="/" className="flex items-center gap-3 text-white flex-shrink-0">
         <div className="w-8 h-8 flex items-center justify-center">
-          <Logo gradientId="nav-gradient" />
+          <Logo />
         </div>
         <h2 className="text-white text-xl font-black leading-tight tracking-tight">Plip</h2>
       </Link>

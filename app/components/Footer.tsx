@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1 space-y-4">
           <div className="flex items-center gap-2 text-white">
             <div className="w-5 h-5 flex items-center justify-center">
-              <Logo gradientId="footer-gradient" />
+              <Logo />
             </div>
             <h2 className="text-white text-lg font-bold">Plip</h2>
           </div>
