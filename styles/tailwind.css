@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+@import "./theme.css";
+
+@layer utilities {
+  .cotton-candy-gradient {
+    background: linear-gradient(to right, #f472b6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-pane {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .widget-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .widget-card:hover {
+    border-color: rgba(96, 165, 250, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .result-snippet {
+    @apply mt-2 p-5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4 transition-all hover:bg-white/10 hover:border-white/20 hover:shadow-lg relative overflow-hidden;
+  }
+
+  .result-snippet::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+  }
+
+  .result-snippet.pink::before {
+    background-color: #f472b6;
+  }
+
+  .result-snippet.blue::before {
+    background-color: #3b82f6;
+  }
+
+  .result-snippet.cyan::before {
+    background-color: #60a5fa;
+  }
+
+  .pillar-glow-pink {
+    box-shadow: 0 0 50px 15px rgba(244, 114, 182, 0.45), 0 0 100px 10px rgba(244, 114, 182, 0.2);
+    border-color: rgba(244, 114, 182, 0.9);
+  }
+
+  .pillar-glow-blue {
+    box-shadow: 0 0 50px 15px rgba(59, 130, 246, 0.45), 0 0 100px 10px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.9);
+  }
+
+  .icon-bright {
+    filter: brightness(1.6) drop-shadow(0 0 12px currentColor);
+  }
+
+  .cta-glow-blue {
+    box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.4);
+  }
+
+  .cta-glow-pink-blue {
+    box-shadow: 0 0 15px 1px rgba(244, 114, 182, 0.25), 0 0 15px 1px rgba(96, 165, 250, 0.25);
+  }
+
+  .input-glow:focus-within {
+    border-color: #f472b6;
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.2);
+  }
+
+  .glow-icon {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+  }
+}
