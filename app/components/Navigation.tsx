@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router';
 import { Button } from '@/app/components/ui/button';
+import Logo from '@/app/components/Logo';
 
 export default function Navigation() {
   const location = useLocation();
@@ -12,16 +13,7 @@ export default function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/5 px-6 py-4 lg:px-20 backdrop-blur-md bg-[#050505]/80">
       <Link to="/" className="flex items-center gap-3 text-white flex-shrink-0">
         <div className="w-8 h-8 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <circle cx="12" cy="12" r="10" fill="url(#nav-gradient)" />
-            <path d="M8 10h8M8 14h8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-            <defs>
-              <linearGradient id="nav-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#f472b6" />
-              </linearGradient>
-            </defs>
-          </svg>
+          <Logo gradientId="nav-gradient" />
         </div>
         <h2 className="text-white text-xl font-black leading-tight tracking-tight">Plip</h2>
       </Link>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { TrendingUp, Share2, Database } from 'lucide-react';
+import Logo from '@/app/components/Logo';
 
 export default function Footer() {
   return (
@@ -8,16 +9,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1 space-y-4">
           <div className="flex items-center gap-2 text-white">
             <div className="w-5 h-5 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <circle cx="12" cy="12" r="10" fill="url(#footer-gradient)" />
-                <path d="M8 10h8M8 14h8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                <defs>
-                  <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3b82f6" />
-                    <stop offset="100%" stopColor="#f472b6" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <Logo gradientId="footer-gradient" />
             </div>
             <h2 className="text-white text-lg font-bold">Plip</h2>
           </div>
