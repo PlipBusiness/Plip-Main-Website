@@ -224,7 +224,7 @@ export default function ContactPage() {
                       30-minute discovery session to map out your automation infrastructure.
                     </p>
                     <a
-                      href="https://calendly.com/YOUR-CALENDLY-LINK"
+                      href="https://calendly.com/plip/discovery-call"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all"
