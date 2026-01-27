@@ -3,20 +3,22 @@ import Footer from '@/app/components/Footer';
 import { Button } from '@/app/components/ui/button';
 import { Input } from '@/app/components/ui/input';
 import { Textarea } from '@/app/components/ui/textarea';
-import { 
-  Mail, 
-  Calendar, 
-  ArrowRight, 
-  Globe, 
+import {
+  Mail,
+  Calendar,
+  ArrowRight,
+  Globe,
   Lock,
   Headphones,
   Share2,
   DollarSign,
   Users,
   Rocket,
-  Settings
+  Settings,
+  X
 } from 'lucide-react';
 import { useState } from 'react';
+import { PopupModal } from 'react-calendly';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,6 +29,7 @@ export default function ContactPage() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -223,15 +226,13 @@ export default function ContactPage() {
                     <p className="text-sm text-white/50 mb-6 max-w-xs">
                       30-minute discovery session to map out your automation infrastructure.
                     </p>
-                    <a
-                      href="https://calendly.com/plip/discovery-call"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all"
+                    <button
+                      onClick={() => setIsCalendlyOpen(true)}
+                      className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all cursor-pointer"
                     >
                       View Calendar
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -351,6 +352,14 @@ export default function ContactPage() {
 
         <Footer />
       </div>
+
+      {/* Calendly Popup Modal */}
+      <PopupModal
+        url="https://calendly.com/plip/discovery-call"
+        onModalClose={() => setIsCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById('root') as HTMLElement}
+      />
     </div>
   );
 }
