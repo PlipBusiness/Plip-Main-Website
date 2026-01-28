@@ -124,7 +124,7 @@ export default function HomePage() {
     if (!isDragging || !testimonialScrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - testimonialScrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1.5;
     testimonialScrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -416,13 +416,14 @@ export default function HomePage() {
           </div>
 
           <div
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-proximity scrollbar-hide cursor-grab active:cursor-grabbing select-none scroll-smooth"
             ref={testimonialScrollRef}
             onScroll={handleTestimonialScroll}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
+            style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
           >
             {testimonials.map((testimonial, index) => {
               const isExpanded = expandedTestimonials.has(index);
