@@ -22,6 +22,11 @@ export default function Footer() {
           <h4 className="text-white font-bold text-sm">Services</h4>
           <ul className="space-y-2 text-white/50 text-sm">
             <li>
+              <Link to="/services" className="hover:text-[#3b82f6] transition-colors">
+                All Services
+              </Link>
+            </li>
+            <li>
               <Link to="/services/website" className="hover:text-[#3b82f6] transition-colors">
                 Website Development
               </Link>
@@ -34,11 +39,6 @@ export default function Footer() {
             <li>
               <Link to="/services/automation" className="hover:text-[#3b82f6] transition-colors">
                 Marketing Automation
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-[#3b82f6] transition-colors">
-                All Services
               </Link>
             </li>
           </ul>
