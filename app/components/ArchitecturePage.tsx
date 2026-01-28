@@ -390,12 +390,12 @@ export default function ArchitecturePage() {
 
                 <div className="flex gap-6 pt-4">
                   <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                    <div className="text-2xl font-black text-white">6+</div>
+                    <div className="text-2xl font-black text-white">8+</div>
                     <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Years Experience</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                    <div className="text-2xl font-black text-white">500+</div>
-                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Projects Delivered</div>
+                    <div className="text-2xl font-black text-white">192+</div>
+                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Businesses Scaled</div>
                   </div>
                 </div>
               </div>
