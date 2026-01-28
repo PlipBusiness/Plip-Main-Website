@@ -366,62 +366,34 @@ export default function ArchitecturePage() {
 
         {/* Founder Spotlight */}
         <section className="w-full py-32 bg-black border-t border-white/5">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left - Text Content */}
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">Founder Spotlight</span>
-                  <h2 className="text-5xl font-black text-white">Joe Teegarden</h2>
-                  <p className="text-white/60 font-medium tracking-wide">Founder & Growth Architect</p>
-                </div>
-
-                <div className="space-y-6 text-white/50 leading-relaxed text-lg">
-                  <p>
-                    I started Plip in 2020 after realizing that most businesses don't struggle because they lack traffic or ideas; they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
-                  </p>
-                  <p>
-                    What I do is build the infrastructure behind growth; automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
-                  </p>
-                  <p>
-                    Plip exists to turn fragmented tools into a single, reliable growth machine.
-                  </p>
-                </div>
-
-                <div className="flex gap-6 pt-4">
-                  <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                    <div className="text-2xl font-black text-white">8+</div>
-                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Years Experience</div>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                    <div className="text-2xl font-black text-white">192+</div>
-                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Businesses Scaled</div>
-                  </div>
-                </div>
+          <div className="max-w-[800px] mx-auto px-6">
+            <div className="space-y-8 text-center">
+              <div className="space-y-4">
+                <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">Founder Spotlight</span>
+                <h2 className="text-5xl font-black text-white">Joe Teegarden</h2>
+                <p className="text-white/60 font-medium tracking-wide">Founder & Growth Architect</p>
               </div>
 
-              {/* Right - Image and Quote */}
-              <div className="space-y-6">
-                {/* Image */}
-                <div className="aspect-[4/5] rounded-[2.5rem] bg-gradient-to-b from-[#f3e5d8] to-[#d6c4b2] overflow-hidden relative group shadow-2xl">
-                  <div className="w-full h-full bg-gray-700"></div>
-                </div>
+              <div className="space-y-6 text-white/50 leading-relaxed text-lg">
+                <p>
+                  I started Plip in 2020 after realizing that most businesses don't struggle because they lack traffic or ideas; they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
+                </p>
+                <p>
+                  What I do is build the infrastructure behind growth; automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
+                </p>
+                <p>
+                  Plip exists to turn fragmented tools into a single, reliable growth machine.
+                </p>
+              </div>
 
-                {/* Quote Card */}
-                <div className="bg-[#0f0f0f] border border-white/10 p-10 rounded-[2.5rem] space-y-6 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-8 text-white/10">
-                    <Quote className="w-16 h-16 rotate-180" />
-                  </div>
-                  <p className="text-white text-lg font-medium leading-relaxed relative z-10 italic">
-                    "My promise to every client is simple: you will know exactly where every cent goes, and you will see exactly what managing data, not black boxes, does for your bottom line."
-                  </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                    <span className="text-white/40 text-xs font-bold uppercase tracking-widest">The Plip Promise</span>
-                    <a href="#" className="flex items-center gap-2 text-white font-bold hover:gap-4 transition-all">
-                      Meet 
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </div>
+              <div className="flex gap-6 pt-4 justify-center max-w-md mx-auto">
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
+                  <div className="text-2xl font-black text-white">8+</div>
+                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Years Experience</div>
+                </div>
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
+                  <div className="text-2xl font-black text-white">192+</div>
+                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Businesses Scaled</div>
                 </div>
               </div>
             </div>
