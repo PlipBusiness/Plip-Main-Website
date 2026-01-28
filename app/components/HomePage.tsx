@@ -17,6 +17,7 @@ export default function HomePage() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const animationFrameRef = useRef<number | null>(null);
 
   const testimonials = [
     { 
@@ -108,24 +109,39 @@ export default function HomePage() {
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!testimonialScrollRef.current) return;
     setIsDragging(true);
+    testimonialScrollRef.current.style.scrollSnapType = 'none';
     setStartX(e.pageX - testimonialScrollRef.current.offsetLeft);
     setScrollLeft(testimonialScrollRef.current.scrollLeft);
   };
 
   const handleMouseLeave = () => {
+    if (isDragging && testimonialScrollRef.current) {
+      testimonialScrollRef.current.style.scrollSnapType = 'x proximity';
+    }
     setIsDragging(false);
   };
 
   const handleMouseUp = () => {
+    if (testimonialScrollRef.current) {
+      testimonialScrollRef.current.style.scrollSnapType = 'x proximity';
+    }
     setIsDragging(false);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !testimonialScrollRef.current) return;
     e.preventDefault();
-    const x = e.pageX - testimonialScrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    testimonialScrollRef.current.scrollLeft = scrollLeft - walk;
+
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    animationFrameRef.current = requestAnimationFrame(() => {
+      if (!testimonialScrollRef.current) return;
+      const x = e.pageX - testimonialScrollRef.current.offsetLeft;
+      const walk = (x - startX);
+      testimonialScrollRef.current.scrollLeft = scrollLeft - walk;
+    });
   };
 
   return (
@@ -416,14 +432,13 @@ export default function HomePage() {
           </div>
 
           <div
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-proximity scrollbar-hide cursor-grab active:cursor-grabbing select-none scroll-smooth"
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-proximity scrollbar-hide cursor-grab active:cursor-grabbing select-none"
             ref={testimonialScrollRef}
             onScroll={handleTestimonialScroll}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
           >
             {testimonials.map((testimonial, index) => {
               const isExpanded = expandedTestimonials.has(index);
