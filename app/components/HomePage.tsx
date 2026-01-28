@@ -89,8 +89,15 @@ export default function HomePage() {
       const container = testimonialScrollRef.current;
       const cardWidth = container.scrollWidth / testimonials.length;
       const scrollPosition = container.scrollLeft;
-      const newIndex = Math.round(scrollPosition / cardWidth);
-      setActiveTestimonial(newIndex);
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      // If scrolled to the end, show last testimonial
+      if (scrollPosition >= maxScroll - 10) {
+        setActiveTestimonial(testimonials.length - 1);
+      } else {
+        const newIndex = Math.round(scrollPosition / cardWidth);
+        setActiveTestimonial(Math.min(newIndex, testimonials.length - 1));
+      }
     }
   };
 
@@ -484,16 +491,12 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center mt-8">
-            <div className="w-full max-w-md">
-              <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
+            <div className="w-32">
+              <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div
                   className="absolute h-full bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] rounded-full transition-all duration-300"
                   style={{ width: `${((activeTestimonial + 1) / testimonials.length) * 100}%` }}
                 ></div>
-              </div>
-              <div className="flex justify-between mt-2 px-1">
-                <span className="text-white/40 text-xs font-bold">{activeTestimonial + 1}</span>
-                <span className="text-white/40 text-xs font-bold">{testimonials.length}</span>
               </div>
             </div>
           </div>
