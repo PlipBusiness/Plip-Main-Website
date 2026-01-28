@@ -14,6 +14,9 @@ export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set());
   const testimonialScrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const testimonials = [
     { 
@@ -100,6 +103,29 @@ export default function HomePage() {
       }
       return newSet;
     });
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!testimonialScrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - testimonialScrollRef.current.offsetLeft);
+    setScrollLeft(testimonialScrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !testimonialScrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - testimonialScrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    testimonialScrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
@@ -389,7 +415,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" ref={testimonialScrollRef} onScroll={handleTestimonialScroll}>
+          <div
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+            ref={testimonialScrollRef}
+            onScroll={handleTestimonialScroll}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+          >
             {testimonials.map((testimonial, index) => {
               const isExpanded = expandedTestimonials.has(index);
               const hasFullQuote = testimonial.fullQuote && testimonial.fullQuote !== testimonial.quote;
