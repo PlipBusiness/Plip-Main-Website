@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router";
+import Layout from "@/app/components/Layout";
 import HomePage from "@/app/components/HomePage";
 import SolutionsPage from "@/app/components/SolutionsPage";
 import ContactPage from "@/app/components/ContactPage";
@@ -12,43 +13,48 @@ import NotFoundPage from "@/app/components/NotFoundPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    Component: HomePage,
-  },
-  {
-    path: "/services",
-    Component: SolutionsPage,
-  },
-  {
-    path: "/contact",
-    Component: ContactPage,
-  },
-  {
-    path: "/about",
-    Component: ArchitecturePage,
-  },
-  {
-    path: "/services/website",
-    Component: WebsiteServicesPage,
-  },
-  {
-    path: "/services/advertising",
-    Component: PaidAdvertisingPage,
-  },
-  {
-    path: "/services/automation",
-    Component: AutomationServicesPage,
-  },
-  {
-    path: "/services/branding",
-    Component: BrandingPage,
-  },
-  {
-    path: "/services/youtube",
-    Component: YouTubeManagementPage,
-  },
-  {
-    path: "*",
-    Component: NotFoundPage,
+    Component: Layout,
+    children: [
+      {
+        path: "/",
+        Component: HomePage,
+      },
+      {
+        path: "/services",
+        Component: SolutionsPage,
+      },
+      {
+        path: "/contact",
+        Component: ContactPage,
+      },
+      {
+        path: "/about",
+        Component: ArchitecturePage,
+      },
+      {
+        path: "/services/website",
+        Component: WebsiteServicesPage,
+      },
+      {
+        path: "/services/advertising",
+        Component: PaidAdvertisingPage,
+      },
+      {
+        path: "/services/automation",
+        Component: AutomationServicesPage,
+      },
+      {
+        path: "/services/branding",
+        Component: BrandingPage,
+      },
+      {
+        path: "/services/youtube",
+        Component: YouTubeManagementPage,
+      },
+      {
+        path: "*",
+        Component: NotFoundPage,
+      },
+    ],
   },
 ]);
