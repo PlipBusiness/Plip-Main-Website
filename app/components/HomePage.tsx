@@ -342,7 +342,7 @@ export default function HomePage() {
                 { icon: Crown, title: 'Automate', desc: 'Streamline workflows to reclaim time and reduce manual errors.', color: '#8b5cf6', number: '03' },
                 { icon: Rocket, title: 'Scale', desc: 'Leverage data insights to expand reach and revenue exponentially.', color: '#10b981', number: '04' }
               ].map((step, index) => (
-                <div key={index} className="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+                <div key={index} className="relative z-10 flex flex-col items-center text-center group">
                   {/* Icon Container with Glow */}
                   <div className="relative w-20 h-20 rounded-[24px] bg-black border border-white/10 transition-all duration-500 flex items-center justify-center mb-6 group-hover:scale-[0.96]">
                     {/* Subtle outer glow on hover */}
