@@ -307,7 +307,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-2">Who will I be talking to?</h4>
                   <p className="text-white/60 leading-relaxed text-sm">
-                    You'll speak directly with a senior growth engineer, not a sales rep. We pair you with someone who has specific experience in your niche (Real Estate, Ecom, etc.).
+                    You'll speak directly with Joe, the owner of Plip. Not a sales rep—just real, honest conversation about how we can help grow your business.
                   </p>
                 </div>
               </div>
@@ -319,9 +319,9 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <Rocket className="w-8 h-8 text-[#3b82f6] shrink-0" />
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-2">Do I need a large team?</h4>
+                  <h4 className="text-lg font-bold text-white mb-2">Do you work with solo professionals?</h4>
                   <p className="text-white/60 leading-relaxed text-sm">
-                    Not necessarily. While our tools scale for enterprises, we work with lean teams generating at least $50k/month who are ready to automate manual bottlenecks.
+                    Absolutely. Many of our clients are independent realtors, agents, and solo entrepreneurs. Whether you're a one-person operation or have a team, we'll build solutions that fit your business.
                   </p>
                 </div>
               </div>
