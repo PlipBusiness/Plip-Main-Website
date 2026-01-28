@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { TrendingUp, Share2, Database } from 'lucide-react';
+import { Facebook, Mail } from 'lucide-react';
 import Logo from '@/app/components/Logo';
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
             <h2 className="text-white text-lg font-bold">Plip</h2>
           </div>
           <p className="text-white/40 text-sm leading-relaxed">
-            Full-service marketing agency specializing in websites, paid advertising, and marketing automation. 6+ years experience, 500+ projects delivered.
+            Full-service marketing agency specializing in websites, advertising, and automation.
           </p>
         </div>
 
@@ -72,15 +72,22 @@ export default function Footer() {
 
         <div className="space-y-4">
           <h4 className="text-white font-bold text-sm">Follow Us</h4>
-          <div className="flex gap-4">
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-[#3b82f6]/20 transition-all">
-              <TrendingUp className="w-4 h-4" />
+          <div className="space-y-3">
+            <a
+              href="https://www.facebook.com/TeegardenJoe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm"
+            >
+              <Facebook className="w-4 h-4" />
+              <span>Facebook</span>
             </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-[#3b82f6]/20 transition-all">
-              <Share2 className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-[#3b82f6]/20 transition-all">
-              <Database className="w-4 h-4" />
+            <a
+              href="mailto:hello@plipmarketing.com"
+              className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm"
+            >
+              <Mail className="w-4 h-4" />
+              <span>hello@plipmarketing.com</span>
             </a>
           </div>
         </div>
