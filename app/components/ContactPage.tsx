@@ -307,7 +307,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-2">Who will I be talking to?</h4>
                   <p className="text-white/60 leading-relaxed text-sm">
-                    You'll speak directly with Joe, the owner of Plip. Not a sales rep—just real, honest conversation about how we can help grow your business.
+                    You'll speak directly with Joe, the owner of Plip. We'll have a real conversation about your business goals and how we can help you achieve them.
                   </p>
                 </div>
               </div>
