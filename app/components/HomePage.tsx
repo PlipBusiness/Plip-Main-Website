@@ -483,10 +483,19 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="flex justify-center gap-4 mt-4">
-            {testimonials.map((_, index) => (
-              <button key={index} className={`w-4 h-4 rounded-full ${activeTestimonial === index ? 'bg-[#3b82f6]' : 'bg-white/50 border border-white/10'}`} onClick={() => scrollToTestimonial(index)}></button>
-            ))}
+          <div className="flex justify-center mt-8">
+            <div className="w-full max-w-md">
+              <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
+                <div
+                  className="absolute h-full bg-gradient-to-r from-[#3b82f6] to-[#60a5fa] rounded-full transition-all duration-300"
+                  style={{ width: `${((activeTestimonial + 1) / testimonials.length) * 100}%` }}
+                ></div>
+              </div>
+              <div className="flex justify-between mt-2 px-1">
+                <span className="text-white/40 text-xs font-bold">{activeTestimonial + 1}</span>
+                <span className="text-white/40 text-xs font-bold">{testimonials.length}</span>
+              </div>
+            </div>
           </div>
         </section>
 
