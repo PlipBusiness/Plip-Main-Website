@@ -117,8 +117,25 @@ export default function HomePage() {
   const handleCardClick = (index: number) => {
     // Only scroll into view if this was a click, not a drag
     // (dragDistance < 5 means minimal movement, likely just a click)
-    if (dragDistance < 5) {
-      scrollToTestimonial(index);
+    if (dragDistance < 5 && testimonialScrollRef.current) {
+      const container = testimonialScrollRef.current;
+      const cards = container.children;
+      const card = cards[index] as HTMLElement;
+
+      if (card) {
+        // Calculate the position to center the card
+        const containerWidth = container.clientWidth;
+        const cardWidth = card.offsetWidth;
+        const cardLeft = card.offsetLeft;
+
+        // Center the card: scroll to (cardLeft - half of remaining space)
+        const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
