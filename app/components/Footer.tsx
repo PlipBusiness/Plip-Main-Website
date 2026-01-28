@@ -62,11 +62,6 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-            <li>
-              <a href="#" className="hover:text-[#3b82f6] transition-colors">
-                Case Studies
-              </a>
-            </li>
           </ul>
         </div>
 
