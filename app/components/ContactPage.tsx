@@ -255,24 +255,13 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Support Team */}
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
-                    <Headphones className="w-5 h-5 text-white/70" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-white/40 font-bold uppercase tracking-wider mb-0.5">Support Team</p>
-                    <p className="text-white font-medium">Mon-Fri, 9am - 6pm EST</p>
-                  </div>
-                </div>
-
                 {/* Socials */}
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
                     <Facebook className="w-5 h-5 text-white/70" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/40 font-bold uppercase tracking-wider mb-1">Follow Us</p>
+                    <p className="text-xs text-white/40 font-bold uppercase tracking-wider mb-1">Socials</p>
                     <a
                       href="https://www.facebook.com/TeegardenJoe"
                       target="_blank"
