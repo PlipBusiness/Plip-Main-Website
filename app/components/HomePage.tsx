@@ -17,6 +17,7 @@ export default function HomePage() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [dragDistance, setDragDistance] = useState(0);
   const animationFrameRef = useRef<number | null>(null);
 
   const testimonials = [
@@ -113,9 +114,18 @@ export default function HomePage() {
     });
   };
 
+  const handleCardClick = (index: number) => {
+    // Only scroll into view if this was a click, not a drag
+    // (dragDistance < 5 means minimal movement, likely just a click)
+    if (dragDistance < 5) {
+      scrollToTestimonial(index);
+    }
+  };
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!testimonialScrollRef.current) return;
     setIsDragging(true);
+    setDragDistance(0);
     testimonialScrollRef.current.style.scrollSnapType = 'none';
     setStartX(e.pageX - testimonialScrollRef.current.offsetLeft);
     setScrollLeft(testimonialScrollRef.current.scrollLeft);
@@ -147,6 +157,7 @@ export default function HomePage() {
       if (!testimonialScrollRef.current) return;
       const x = e.pageX - testimonialScrollRef.current.offsetLeft;
       const walk = (x - startX);
+      setDragDistance(Math.abs(walk));
       testimonialScrollRef.current.scrollLeft = scrollLeft - walk;
     });
   };
@@ -452,7 +463,11 @@ export default function HomePage() {
               const hasFullQuote = testimonial.fullQuote && testimonial.fullQuote !== testimonial.quote;
               
               return (
-                <Card key={index} className={`snap-center shrink-0 w-[300px] md:w-[450px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:border-[#3b82f6]/30 transition-colors flex flex-col justify-between ${activeTestimonial === index ? 'active' : ''}`}>
+                <Card
+                  key={index}
+                  onClick={() => handleCardClick(index)}
+                  className={`snap-center shrink-0 w-[300px] md:w-[450px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:border-[#3b82f6]/30 transition-colors flex flex-col justify-between cursor-pointer ${activeTestimonial === index ? 'active' : ''}`}
+                >
                   <div>
                     <div className="flex gap-4 items-start mb-6">
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} shadow-lg`}></div>
