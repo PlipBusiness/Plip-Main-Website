@@ -474,20 +474,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Trusted Brands */}
-        <section className="w-full max-w-[1200px] mx-auto px-6 py-12">
-          <div className="text-center mb-8">
-            <p className="text-white/40 text-sm font-bold uppercase tracking-widest">Trusted by</p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 opacity-60 hover:opacity-100 transition-opacity duration-300">
-            <ImageWithFallback src="figma:asset/b843d02da3cbc76f03bf80975cd7ebfdbb2098f4.png" alt="Whimsy Lanyards" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
-            <ImageWithFallback src="figma:asset/7fac7a7ce9c7b6c7148fcc4c0b1c9a4d595a7c19.png" alt="StrataGym" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
-            <ImageWithFallback src="figma:asset/e0d7df030a6032fe190738ad5aff75d0c9fc152e.png" alt="Realtor" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
-            <ImageWithFallback src="figma:asset/f9a7005f0cd142b0f65fb47d61beda2bbdb3f4de.png" alt="Noblemen" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
-            <ImageWithFallback src="figma:asset/83df48a0c6a812897a6d8b7eff8b54b322479a68.png" alt="Sarkisian Jewellery" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 invert" />
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="w-full py-16 px-6 bg-black flex items-center justify-center">
           <div className="w-full max-w-[900px] bg-[#0f0f0f] rounded-[2rem] p-12 md:p-20 relative overflow-hidden border border-white/20 flex flex-col items-center text-center" style={{ boxShadow: '0 0 60px rgba(59, 130, 246, 0.25), 0 0 100px rgba(59, 130, 246, 0.12)' }}>
