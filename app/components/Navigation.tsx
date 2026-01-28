@@ -50,7 +50,7 @@ export default function Navigation() {
                 to="/services/website"
                 className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
               >
-                Website Development
+                Websites
               </Link>
               <Link
                 to="/services/advertising"
@@ -62,7 +62,13 @@ export default function Navigation() {
                 to="/services/automation"
                 className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
               >
-                Marketing Automation
+                Automation
+              </Link>
+              <Link
+                to="/services/branding"
+                className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+              >
+                Logo Design
               </Link>
               <Link
                 to="/services/branding"

@@ -1,6 +1,5 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import ServiceTabs from '@/app/components/ServiceTabs';
 import { Button } from '@/app/components/ui/button';
 import { 
   Palette, 
@@ -36,7 +35,6 @@ export default function BrandingPage() {
 
       <div className="relative z-10">
         <Navigation />
-        <ServiceTabs />
 
         {/* Hero Section */}
         <section className="w-full max-w-[1440px] mx-auto px-6 py-24 lg:py-32">
