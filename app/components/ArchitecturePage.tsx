@@ -372,30 +372,30 @@ export default function ArchitecturePage() {
               <div className="space-y-8">
                 <div className="space-y-4">
                   <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">Founder Spotlight</span>
-                  <h2 className="text-5xl font-black text-white">Sarah Jenkins</h2>
-                  <p className="text-white/60 font-medium tracking-wide">Automation Specialist & Growth Architect</p>
+                  <h2 className="text-5xl font-black text-white">Joe Teegarden</h2>
+                  <p className="text-white/60 font-medium tracking-wide">Founder & Growth Architect</p>
                 </div>
 
                 <div className="space-y-6 text-white/50 leading-relaxed text-lg">
                   <p>
-                    "I started Plip with a single observation: most agencies are great at spending money, but terrible at respecting their own time."
+                    I started Plip in 2020 after realizing that most businesses don't struggle because they lack traffic or ideas; they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
                   </p>
                   <p>
-                    With over 12 years in marketing, Sarah recognized that the bottleneck wasn't lead generation—it was lead management. She pivoted from sales-led marketing to full-stack automation engineering, becoming a certified expert in cross-platform integration.
+                    What I do is build the infrastructure behind growth; automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
                   </p>
                   <p>
-                    Today, she leads a team obsessed with building the perfect, self-sustaining growth machine for clients who demand excellence.
+                    Plip exists to turn fragmented tools into a single, reliable growth machine.
                   </p>
                 </div>
 
                 <div className="flex gap-6 pt-4">
                   <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                    <div className="text-2xl font-black text-white">12+</div>
+                    <div className="text-2xl font-black text-white">6+</div>
                     <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Years Experience</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
                     <div className="text-2xl font-black text-white">500+</div>
-                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Systems Built</div>
+                    <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Projects Delivered</div>
                   </div>
                 </div>
               </div>
