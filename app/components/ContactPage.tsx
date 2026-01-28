@@ -211,7 +211,7 @@ export default function ContactPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-wider w-fit mb-6">
                   <Globe className="w-4 h-4 text-[#60a5fa]" />
-                  Global / Remote First
+                  US Based / International Work
                 </div>
                 <h3 className="text-3xl font-black text-white mb-2">Prefer to talk live?</h3>
                 <p className="text-white/60">Skip the inbox and connect directly with our growth strategists.</p>
