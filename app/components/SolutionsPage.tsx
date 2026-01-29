@@ -359,7 +359,7 @@ export default function SolutionsPage() {
               <div className="glass-pane w-full rounded-2xl p-8 border border-white/10 relative shadow-2xl overflow-hidden min-h-[400px] flex items-center justify-center">
                 <div className="absolute top-6 right-6 z-20 bg-black/80 backdrop-blur-md border border-[#60a5fa]/30 px-4 py-2 rounded-full shadow-xl flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-sm font-bold text-white">842 Active Workflows</span>
+                  <span className="text-sm font-bold text-white">24/7 Active</span>
                 </div>
 
                 <div className="relative w-full h-full flex flex-col items-center gap-8">
