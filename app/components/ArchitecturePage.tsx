@@ -79,7 +79,7 @@ export default function ArchitecturePage() {
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gray-800"></div>
-                    <span className="text-sm font-bold text-white/40">Wesley Krombel, Connecticut Realtor</span>
+                    <span className="text-sm font-bold text-white/40">Wesley K., Connecticut Realtor</span>
                   </div>
                 </div>
               </div>
