@@ -122,10 +122,10 @@ export default function IntegrationBubbles() {
   const row4Items = shuffledIntegrations.slice(itemsPerRow * 3);
   
   const rows = [
-    { integrations: [...row1Items, ...row1Items], speed: 50 },
-    { integrations: [...row2Items, ...row2Items], speed: 52 },
-    { integrations: [...row3Items, ...row3Items], speed: 48 },
-    { integrations: [...row4Items, ...row4Items], speed: 51 },
+    { integrations: [...row1Items, ...row1Items], speed: 60 },
+    { integrations: [...row2Items, ...row2Items], speed: 62 },
+    { integrations: [...row3Items, ...row3Items], speed: 58 },
+    { integrations: [...row4Items, ...row4Items], speed: 61 },
   ];
 
   return (
