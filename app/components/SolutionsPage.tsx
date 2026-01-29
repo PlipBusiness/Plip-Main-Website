@@ -1,12 +1,12 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { Button } from '@/app/components/ui/button';
-import { 
-  Globe, 
-  MousePointerClick, 
-  Bot, 
-  TrendingUp, 
-  CheckCircle, 
+import {
+  Globe,
+  MousePointerClick,
+  Bot,
+  TrendingUp,
+  CheckCircle,
   ArrowRight,
   Mail,
   Calendar,
@@ -16,7 +16,10 @@ import {
   Video,
   Pen,
   Fingerprint,
-  BarChart3
+  BarChart3,
+  Palette,
+  Type,
+  Layers
 } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -74,9 +77,9 @@ export default function SolutionsPage() {
                   <TrendingUp className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 font-bold uppercase tracking-wider mb-1">E-Commerce Case Study</p>
+                  <p className="text-xs text-white/40 font-bold uppercase tracking-wider mb-1">Client Success Story</p>
                   <p className="text-white text-sm leading-relaxed">
-                    "Redesigning the mobile checkout flow increased conversion rate by <strong className="text-[#f472b6]">42%</strong> within just 30 days."
+                    "Strategic redesign of the user experience resulted in significantly improved engagement and lead generation."
                   </p>
                 </div>
               </div>
@@ -137,19 +140,24 @@ export default function SolutionsPage() {
                     </div>
                   </div>
                   
-                  {/* Conversion Rate Badge */}
-                  <div className="absolute bottom-6 right-6 z-20 bg-black/80 backdrop-blur-md border border-[#f472b6]/30 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-pulse">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] text-white/50 uppercase font-bold">Conv. Rate</span>
-                      <span className="text-xl font-bold text-white flex items-center gap-1">
-                        4.2%
-                        <TrendingUp className="w-4 h-4 text-green-400" />
-                      </span>
-                    </div>
-                    <div className="h-8 w-16 flex items-end gap-1">
-                      <div className="w-full bg-white/20 h-[30%] rounded-t"></div>
-                      <div className="w-full bg-white/20 h-[50%] rounded-t"></div>
-                      <div className="w-full bg-[#f472b6] h-[90%] rounded-t"></div>
+                  {/* Design Elements Badge */}
+                  <div className="absolute bottom-6 right-6 z-20 bg-black/90 backdrop-blur-md border border-[#f472b6]/30 p-4 rounded-xl shadow-xl">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Design System</span>
+                      <div className="flex gap-2">
+                        <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
+                          <Palette className="w-3 h-3 text-[#f472b6]" />
+                          <span className="text-[9px] text-white/70 font-medium">Colors</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
+                          <Type className="w-3 h-3 text-[#60a5fa]" />
+                          <span className="text-[9px] text-white/70 font-medium">Typography</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
+                        <Layers className="w-3 h-3 text-[#a855f7]" />
+                        <span className="text-[9px] text-white/70 font-medium">Components</span>
+                      </div>
                     </div>
                   </div>
                   
