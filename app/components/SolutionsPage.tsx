@@ -18,8 +18,8 @@ import {
   Fingerprint,
   BarChart3,
   Palette,
-  Type,
-  Layers
+  Code,
+  Rocket
 } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -140,23 +140,31 @@ export default function SolutionsPage() {
                     </div>
                   </div>
                   
-                  {/* Design Elements Badge */}
+                  {/* Project Timeline Badge */}
                   <div className="absolute bottom-6 right-6 z-20 bg-black/90 backdrop-blur-md border border-[#f472b6]/30 p-4 rounded-xl shadow-xl">
-                    <div className="flex flex-col gap-2">
-                      <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Design System</span>
-                      <div className="flex gap-2">
-                        <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
-                          <Palette className="w-3 h-3 text-[#f472b6]" />
-                          <span className="text-[9px] text-white/70 font-medium">Colors</span>
+                    <div className="flex flex-col gap-3">
+                      <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Project Flow</span>
+                      <div className="flex items-center gap-2">
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="w-8 h-8 rounded-lg bg-[#f472b6]/20 border border-[#f472b6]/40 flex items-center justify-center">
+                            <Palette className="w-4 h-4 text-[#f472b6]" />
+                          </div>
+                          <span className="text-[8px] text-white/60 font-medium">Design</span>
                         </div>
-                        <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
-                          <Type className="w-3 h-3 text-[#60a5fa]" />
-                          <span className="text-[9px] text-white/70 font-medium">Typography</span>
+                        <ArrowRight className="w-3 h-3 text-white/30" />
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="w-8 h-8 rounded-lg bg-[#60a5fa]/20 border border-[#60a5fa]/40 flex items-center justify-center">
+                            <Code className="w-4 h-4 text-[#60a5fa]" />
+                          </div>
+                          <span className="text-[8px] text-white/60 font-medium">Build</span>
                         </div>
-                      </div>
-                      <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded-md border border-white/10">
-                        <Layers className="w-3 h-3 text-[#a855f7]" />
-                        <span className="text-[9px] text-white/70 font-medium">Components</span>
+                        <ArrowRight className="w-3 h-3 text-white/30" />
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="w-8 h-8 rounded-lg bg-[#10b981]/20 border border-[#10b981]/40 flex items-center justify-center">
+                            <Rocket className="w-4 h-4 text-[#10b981]" />
+                          </div>
+                          <span className="text-[8px] text-white/60 font-medium">Launch</span>
+                        </div>
                       </div>
                     </div>
                   </div>
