@@ -112,9 +112,6 @@ export default function Navigation() {
       </div>
 
       <div className="flex gap-4 flex-shrink-0">
-        <Button variant="ghost" className="min-w-[80px] h-9 px-4 text-white/70 hover:text-white text-sm font-bold">
-          Log In
-        </Button>
         <Link to="/contact">
           <Button className="min-w-[100px] h-9 px-5 bg-[#3b82f6] hover:bg-blue-600 text-white text-sm font-bold cta-glow-blue">
             Start Growth
