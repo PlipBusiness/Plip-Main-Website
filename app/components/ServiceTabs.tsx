@@ -9,8 +9,7 @@ export default function ServiceTabs() {
     { label: 'Automation', path: '/services/automation' },
     { label: 'Email Marketing', path: '/services/automation' },
     { label: 'YouTube Management', path: '/services/youtube' },
-    { label: 'Logo Design', path: '/services/branding' },
-    { label: 'Brand Identity', path: '/services/branding' },
+    { label: 'Branding', path: '/services/branding' },
   ];
 
   return (

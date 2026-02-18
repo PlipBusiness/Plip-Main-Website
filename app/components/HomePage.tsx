@@ -180,12 +180,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-      {/* Blur Blobs */}
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#12121a] to-[#1a1a2e] text-white overflow-x-hidden">
+      {/* Blur Blobs - softer and more organic */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#f472b6] blur-[80px] opacity-25 top-[-150px] left-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6] blur-[80px] opacity-25 bottom-[-150px] right-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-purple-600 blur-[80px] opacity-20 top-[30%] right-[20%]"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] bg-[#f472b6] blur-[100px] opacity-20 top-[-150px] left-[-150px]"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-[#3b82f6] blur-[100px] opacity-20 bottom-[-150px] right-[-150px]"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-[50%_50%_50%_50%_/_50%_50%_50%_50%] bg-purple-600 blur-[100px] opacity-15 top-[30%] right-[20%]"></div>
       </div>
 
       <div className="relative z-10">
@@ -197,7 +197,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left Column */}
               <div className="flex flex-col gap-8 text-left z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#3b82f6]/10 to-[#f472b6]/10 border border-[#3b82f6]/20 text-white text-xs font-bold uppercase tracking-wider w-fit">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-badge text-white text-xs font-bold uppercase tracking-wider w-fit">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3b82f6] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3b82f6]"></span>
@@ -228,14 +228,14 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex items-center gap-6 mt-6">
-                  <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                  <div className="flex items-center gap-3 px-4 py-2 rounded-full glass-badge">
                     <Star className="w-4 h-4 text-[#f472b6] fill-[#f472b6]" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-sm">8+ Years</span>
                       <span className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Experience</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                  <div className="flex items-center gap-3 px-4 py-2 rounded-full glass-badge">
                     <Check className="w-4 h-4 text-[#10b981]" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-sm">Free</span>
@@ -248,8 +248,8 @@ export default function HomePage() {
               {/* Right Column - Profile Card */}
               <div className="relative w-full h-full flex items-center justify-center lg:justify-end z-10">
                 <div className="relative w-full max-w-md mx-auto lg:mr-0 lg:ml-auto">
-                  <motion.div 
-                    className="bg-[#111] bg-opacity-80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-2xl overflow-hidden"
+                  <motion.div
+                    className="glass-card rounded-3xl p-6 lg:p-8 shadow-2xl overflow-hidden"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -291,26 +291,26 @@ export default function HomePage() {
 
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/5 hover:bg-white/10 transition-colors group">
+                      <div className="glass-card glass-card-hover rounded-xl p-4 group">
                         <div className="flex items-center gap-2 mb-2 text-white/40 group-hover:text-[#3b82f6] transition-colors">
                           <TrendingUp className="w-4 h-4" />
                           <span className="text-[10px] uppercase font-bold tracking-wider">Last Action Sent</span>
                         </div>
                         <p className="text-white font-bold">18 mins ago</p>
                       </div>
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/5 hover:bg-white/10 transition-colors group">
+                      <div className="glass-card glass-card-hover rounded-xl p-4 group">
                         <div className="flex items-center gap-2 mb-2 text-white/40 group-hover:text-green-400 transition-colors">
                           <span className="text-[10px] uppercase font-bold tracking-wider">Budget</span>
                         </div>
                         <p className="text-white font-bold">$675k-$950k</p>
                       </div>
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/5 hover:bg-white/10 transition-colors group">
+                      <div className="glass-card glass-card-hover rounded-xl p-4 group">
                         <div className="flex items-center gap-2 mb-2 text-white/40 group-hover:text-[#f472b6] transition-colors">
                           <span className="text-[10px] uppercase font-bold tracking-wider">Timeframe</span>
                         </div>
                         <p className="text-white font-bold">1-3 Months</p>
                       </div>
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/5 hover:bg-white/10 transition-colors group">
+                      <div className="glass-card glass-card-hover rounded-xl p-4 group">
                         <div className="flex items-center gap-2 mb-2 text-white/40 group-hover:text-[#60a5fa] transition-colors">
                           <span className="text-[10px] uppercase font-bold tracking-wider">Intent</span>
                         </div>
@@ -320,15 +320,15 @@ export default function HomePage() {
                   </motion.div>
 
                   {/* Floating Icons */}
-                  <motion.div 
-                    className="absolute -right-8 top-1/3 bg-[#111] border border-white/10 p-3 rounded-xl shadow-xl hidden lg:block"
+                  <motion.div
+                    className="absolute -right-8 top-1/3 glass-card p-3 rounded-xl shadow-xl hidden lg:block"
                     animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   >
                     <Check className="w-6 h-6 text-green-400" />
                   </motion.div>
-                  <motion.div 
-                    className="absolute -left-[21px] bottom-1/4 bg-[#111] border border-white/10 p-3 rounded-xl shadow-xl hidden lg:block"
+                  <motion.div
+                    className="absolute -left-[21px] bottom-1/4 glass-card p-3 rounded-xl shadow-xl hidden lg:block"
                     animate={{ y: [0, -12, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
                   >
@@ -346,7 +346,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="flex flex-col gap-8">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-bold uppercase tracking-wider w-fit mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge text-white/60 text-xs font-bold uppercase tracking-wider w-fit mb-4">
                     <Check className="w-3 h-3 text-[#f472b6]" />
                     Trust & Performance
                   </div>
@@ -359,21 +359,21 @@ export default function HomePage() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <Card className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#60a5fa]/30 transition-colors">
+                  <Card className="glass-card glass-card-hover rounded-2xl p-6">
                     <div className="text-3xl md:text-4xl font-black text-white mb-2">27k+</div>
                     <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Leads Generated</div>
                   </Card>
-                  <Card className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#3b82f6]/30 transition-colors">
+                  <Card className="glass-card glass-card-hover rounded-2xl p-6">
                     <div className="text-3xl md:text-4xl font-black text-white mb-2">$734k+</div>
                     <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Ad Spend Managed</div>
                   </Card>
-                  <Card className="col-span-2 bg-gradient-to-r from-white/5 to-transparent border border-white/10 rounded-2xl p-6 hover:border-[#f472b6]/30 transition-colors">
+                  <Card className="col-span-2 glass-card glass-card-hover rounded-2xl p-6">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-4xl md:text-5xl font-black text-[#f472b6] mb-2">500+</div>
                         <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Projects Delivered</div>
                       </div>
-                      <div className="h-14 w-14 rounded-full bg-[#f472b6]/10 border border-[#f472b6]/20 flex items-center justify-center">
+                      <div className="h-14 w-14 rounded-full glass-badge flex items-center justify-center">
                         <TrendingUp className="w-6 h-6 text-[#f472b6]" />
                       </div>
                     </div>
@@ -383,7 +383,7 @@ export default function HomePage() {
 
               {/* Integrations */}
               <div className="relative w-full">
-                <div className="relative bg-[#0d0f12] backdrop-blur-sm border border-white/10 rounded-3xl p-10 flex flex-col h-[420px] overflow-hidden">
+                <div className="relative glass-card rounded-3xl p-10 flex flex-col h-[420px] overflow-hidden">
                   <div className="flex flex-col gap-2 mb-8 text-center flex-shrink-0">
                     <h3 className="text-sm font-bold text-white/50 uppercase tracking-widest">Seamless Integration Ecosystem</h3>
                   </div>
@@ -397,7 +397,7 @@ export default function HomePage() {
         {/* System Lifecycle */}
         <section className="w-full max-w-[1200px] mx-auto px-6 py-24 border-t border-white/5">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#60a5fa]/10 border border-[#60a5fa]/20 text-[#60a5fa] text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge text-[#60a5fa] text-xs font-bold uppercase tracking-wider mb-4">
               Continuous Growth
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
@@ -483,7 +483,7 @@ export default function HomePage() {
                 <Card
                   key={index}
                   onClick={() => handleCardClick(index)}
-                  className={`snap-center shrink-0 w-[300px] md:w-[450px] bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:border-[#3b82f6]/30 transition-colors flex flex-col justify-between cursor-pointer ${activeTestimonial === index ? 'active' : ''}`}
+                  className={`snap-center shrink-0 w-[300px] md:w-[450px] glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between cursor-pointer ${activeTestimonial === index ? 'active' : ''}`}
                 >
                   <div>
                     <div className="flex gap-4 items-start mb-6">
@@ -535,9 +535,9 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-16 px-6 bg-black flex items-center justify-center">
-          <div className="w-full max-w-[900px] bg-[#0f0f0f] rounded-[2rem] p-12 md:p-20 relative overflow-hidden border border-white/20 flex flex-col items-center text-center" style={{ boxShadow: '0 0 60px rgba(59, 130, 246, 0.25), 0 0 100px rgba(59, 130, 246, 0.12)' }}>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-radial from-[#3b82f6]/20 via-[#f472b6]/5 to-transparent blur-[60px] pointer-events-none"></div>
+        <section className="w-full py-16 px-6 flex items-center justify-center">
+          <div className="w-full max-w-[900px] glass-card rounded-[2rem] p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center" style={{ boxShadow: '0 0 60px rgba(59, 130, 246, 0.15), 0 0 100px rgba(59, 130, 246, 0.08)' }}>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-radial from-[#3b82f6]/15 via-[#f472b6]/5 to-transparent blur-[80px] pointer-events-none"></div>
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight relative z-10 leading-tight text-center">
               Ready to automate your <br />
               <span className="cotton-candy-gradient">market dominance?</span>

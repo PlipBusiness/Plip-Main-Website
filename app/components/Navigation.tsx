@@ -68,13 +68,7 @@ export default function Navigation() {
                 to="/services/branding"
                 className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
               >
-                Logo Design
-              </Link>
-              <Link
-                to="/services/branding"
-                className="block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-              >
-                Brand Identity
+                Branding
               </Link>
               <Link
                 to="/services/youtube"
