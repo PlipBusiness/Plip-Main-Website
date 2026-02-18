@@ -411,15 +411,12 @@ export default function ArchitecturePage() {
               <p className="text-white/60 text-xl mb-12 relative z-10 max-w-2xl mx-auto">
                 We only partner with agencies where our systems can deliver exponential growth. Let's see if we're a match.
               </p>
-              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="relative z-10 flex items-center justify-center">
                 <Link to="/contact">
                   <Button className="px-10 py-5 bg-[#3b82f6] text-white text-lg font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-2xl shadow-[#3b82f6]/20">
-                    Apply for Partnership
+                    Get Started
                   </Button>
                 </Link>
-                <Button variant="outline" className="px-10 py-5 bg-transparent border border-white/30 text-white text-lg font-bold rounded-2xl hover:bg-white/5 transition-all">
-                  Download Case Studies
-                </Button>
               </div>
             </div>
           </div>
