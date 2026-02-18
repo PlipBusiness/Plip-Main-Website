@@ -412,9 +412,9 @@ export default function ArchitecturePage() {
                 We only partner with agencies where our systems can deliver exponential growth. Let's see if we're a match.
               </p>
               <div className="relative z-10 flex items-center justify-center">
-                <Link to="/contact">
+                <Link to="/services">
                   <Button className="px-10 py-5 bg-[#3b82f6] text-white text-lg font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-2xl shadow-[#3b82f6]/20">
-                    Get Started
+                    View Our Services
                   </Button>
                 </Link>
               </div>
