@@ -365,9 +365,9 @@ export default function BrandingPage() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#c084fc]/20 flex items-center justify-center text-[#a855f7] mb-4 mx-auto">
                   <Award className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">6+ Years Experience</h3>
+                <h3 className="text-xl font-bold text-white mb-2">8+ Years Experience</h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  500+ brands launched and refined with proven design strategies.
+                  Building brands from scratch and revising existing ones with proven design strategies.
                 </p>
               </div>
 
