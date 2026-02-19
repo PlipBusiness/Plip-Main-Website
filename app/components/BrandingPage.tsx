@@ -159,8 +159,64 @@ export default function BrandingPage() {
           </div>
         </section>
 
-        {/* Brand Identity Section */}
+        {/* Our Process */}
         <section className="w-full border-t border-white/5 py-24 px-6">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+                Our <span className="cotton-candy-gradient">Design Process</span>
+              </h2>
+              <p className="text-white/60 text-lg max-w-2xl mx-auto">
+                A collaborative, strategic approach to building your brand from the ground up.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#c084fc]/20 flex items-center justify-center text-[#a855f7] mb-4 mx-auto">
+                  <Users className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">1. Discovery</h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  We dive deep into your business, audience, and industry to understand what makes you unique.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#60a5fa]/20 flex items-center justify-center text-[#3b82f6] mb-4 mx-auto">
+                  <Eye className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">2. Concept Development</h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Multiple design concepts are created based on our research and your brand vision.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f472b6]/20 to-[#fb7185]/20 flex items-center justify-center text-[#f472b6] mb-4 mx-auto">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">3. Refinement</h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  We refine your chosen direction through collaborative feedback until it's perfect.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#10b981]/20 to-[#34d399]/20 flex items-center justify-center text-[#10b981] mb-4 mx-auto">
+                  <Target className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">4. Delivery</h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Complete brand package delivered with all files, guidelines, and support you need.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Brand Identity Section */}
+        <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-wider mb-6">
@@ -290,62 +346,6 @@ export default function BrandingPage() {
                     Photography direction
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Process */}
-        <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-                Our <span className="cotton-candy-gradient">Design Process</span>
-              </h2>
-              <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                A collaborative, strategic approach to building your brand from the ground up.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#c084fc]/20 flex items-center justify-center text-[#a855f7] mb-4 mx-auto">
-                  <Users className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">1. Discovery</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  We dive deep into your business, audience, and industry to understand what makes you unique.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#60a5fa]/20 flex items-center justify-center text-[#3b82f6] mb-4 mx-auto">
-                  <Eye className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">2. Concept Development</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Multiple design concepts are created based on our research and your brand vision.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f472b6]/20 to-[#fb7185]/20 flex items-center justify-center text-[#f472b6] mb-4 mx-auto">
-                  <Zap className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">3. Refinement</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  We refine your chosen direction through collaborative feedback until it's perfect.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#10b981]/20 to-[#34d399]/20 flex items-center justify-center text-[#10b981] mb-4 mx-auto">
-                  <Target className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">4. Delivery</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Complete brand package delivered with all files, guidelines, and support you need.
-                </p>
               </div>
             </div>
           </div>
