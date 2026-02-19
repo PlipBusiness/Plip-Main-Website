@@ -360,11 +360,11 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <Card className="glass-card glass-card-hover rounded-2xl p-6">
-                    <div className="text-3xl md:text-4xl font-black text-white mb-2">27k+</div>
+                    <div className="text-3xl md:text-4xl font-black text-white mb-2">14k+</div>
                     <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Leads Generated</div>
                   </Card>
                   <Card className="glass-card glass-card-hover rounded-2xl p-6">
-                    <div className="text-3xl md:text-4xl font-black text-white mb-2">$734k+</div>
+                    <div className="text-3xl md:text-4xl font-black text-white mb-2">$327k+</div>
                     <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Ad Spend Managed</div>
                   </Card>
                   <Card className="col-span-2 glass-card glass-card-hover rounded-2xl p-6">

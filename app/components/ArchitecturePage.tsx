@@ -117,11 +117,11 @@ export default function ArchitecturePage() {
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">$734k+</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">$327k+</div>
                 <div className="text-[10px] font-bold text-[#60a5fa] tracking-widest uppercase">Ad Spend Managed</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">27k+</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">14k+</div>
                 <div className="text-[10px] font-bold text-[#f472b6] tracking-widest uppercase">Leads Generated</div>
               </div>
               <div className="space-y-1">
@@ -129,8 +129,8 @@ export default function ArchitecturePage() {
                 <div className="text-[10px] font-bold text-[#3b82f6] tracking-widest uppercase">Businesses Scaled</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">43+</div>
-                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Websites Influenced</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">14+</div>
+                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Websites Designed</div>
               </div>
             </div>
           </div>
