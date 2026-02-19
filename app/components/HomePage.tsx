@@ -259,7 +259,7 @@ export default function HomePage() {
                         <div className="relative">
                           <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 p-[2px]">
                             <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
-                              <div className="w-full h-full bg-gray-700"></div>
+                              <span className="text-white font-black text-sm">SJ</span>
                             </div>
                           </div>
                           <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full"></div>
@@ -487,7 +487,11 @@ export default function HomePage() {
                 >
                   <div>
                     <div className="flex gap-4 items-start mb-6">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} shadow-lg`}></div>
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} shadow-lg flex items-center justify-center`}>
+                        <span className="text-white font-black text-sm">
+                          {testimonial.name.split(' ').map((n: string) => n[0]).join('')}
+                        </span>
+                      </div>
                       <div className="flex-1">
                         <p className="text-white font-bold">{testimonial.name}</p>
                         <p className="text-white/40 text-sm">{testimonial.role}</p>

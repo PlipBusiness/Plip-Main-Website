@@ -78,7 +78,9 @@ export default function ArchitecturePage() {
                     "Joe has taught me so much and has helped expand my marketing to where it's not only helping my business but I actually feel more confident when speaking with new clients."
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-800"></div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center">
+                      <span className="text-white font-black text-xs">WK</span>
+                    </div>
                     <span className="text-sm font-bold text-white/40">Wesley K., Connecticut Realtor</span>
                   </div>
                 </div>
@@ -103,7 +105,9 @@ export default function ArchitecturePage() {
                     "We recently closed on a 400k deal provided by Plip that was basically 25x my investment for the month. I always feel like things are under control for all my marketing."
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-800"></div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                      <span className="text-white font-black text-xs">CR</span>
+                    </div>
                     <span className="text-sm font-bold text-white/40">Chris R., Texas Realtor</span>
                   </div>
                 </div>
