@@ -7,7 +7,6 @@ export default function ServiceTabs() {
     { label: 'Websites', path: '/services/website' },
     { label: 'Paid Advertising', path: '/services/advertising' },
     { label: 'Automation', path: '/services/automation' },
-    { label: 'Email Marketing', path: '/services/automation' },
     { label: 'YouTube Management', path: '/services/youtube' },
     { label: 'Branding', path: '/services/branding' },
   ];
