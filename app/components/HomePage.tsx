@@ -8,6 +8,7 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import IntegrationBubbles from '@/app/components/IntegrationBubbles';
 import DisplayCards from '@/app/components/DisplayCards';
+import { GradientButton } from '@/app/components/GradientButton';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 
 export default function HomePage() {
@@ -502,9 +503,9 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center">
               <Link to="/contact">
-                <Button className="px-10 py-6 bg-[#3b82f6] text-white text-xl font-bold rounded-xl hover:bg-[#2563eb] transition-all shadow-[0_0_20px_rgba(59,130,246,0.2)] relative z-10">
+                <GradientButton className="px-10 py-5 text-xl relative z-10">
                   Book Your Strategy Call
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
