@@ -207,7 +207,7 @@ export default function HomePage() {
                   Full-Service Marketing Agency
                 </div>
 
-                <h1 className="text-white text-5xl lg:text-7xl font-black leading-[1.05] tracking-[-0.02em]">
+                <h1 className="text-white text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-[-0.02em]">
                   One Marketing Agency.<br />
                   <span className="cotton-candy-gradient">Every Solution Your</span><br />
                   <span className="cotton-candy-gradient">Business Needs.</span>
@@ -249,40 +249,40 @@ export default function HomePage() {
               </div>
 
               {/* Right Column — Display Cards */}
-              <div className="relative w-full flex items-center justify-center lg:justify-end z-10">
-                <div className="relative w-full max-w-[540px] flex flex-col items-center lg:items-end gap-6">
+              <div className="relative w-full flex items-center justify-center z-10">
+                <div className="relative flex flex-col items-center gap-8">
 
                   {/* Social proof chip */}
                   <motion.div
-                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-[#f472b6]/20 self-start lg:self-auto lg:mr-8"
+                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-[#f472b6]/20"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 text-[#f472b6] fill-[#f472b6]" />
+                        <Star key={i} className="w-3.5 h-3.5 text-[#f472b6] fill-[#f472b6]" />
                       ))}
                     </div>
-                    <span className="text-white/60 text-xs font-semibold">50+ happy clients</span>
+                    <span className="text-white/60 text-sm font-semibold">50+ happy clients</span>
                   </motion.div>
 
                   {/* Stacked display cards */}
                   <div className="relative">
                     {/* Glow behind cards */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div className="w-72 h-48 rounded-full bg-gradient-to-r from-[#f472b6]/20 to-[#3b82f6]/20 blur-3xl" />
+                      <div className="w-96 h-64 rounded-full bg-gradient-to-r from-[#f472b6]/20 to-[#3b82f6]/20 blur-3xl" />
                     </div>
                     <DisplayCards />
                   </div>
 
                   {/* New inquiry badge */}
                   <motion.div
-                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-green-500/20 self-end lg:self-auto lg:ml-16"
+                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-green-500/20"
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                   >
                     <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0"></div>
-                    <span className="text-green-400 text-xs font-bold whitespace-nowrap">New inquiry received</span>
+                    <span className="text-green-400 text-sm font-bold whitespace-nowrap">New inquiry received</span>
                   </motion.div>
 
                 </div>
