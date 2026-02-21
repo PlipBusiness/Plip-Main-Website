@@ -251,11 +251,10 @@ export default function HomePage() {
               {/* Right Column — Display Cards */}
               <div className="relative w-full flex items-center justify-center z-10">
                 {/*
-                  Card grid = h-44 (176px). Cards cascade +80px downward (translate-y-20).
-                  Visual stack height ~256px. pt-14 + pb-36 creates a 376px zone so
-                  absolutely-positioned badges sit cleanly above and below the stack.
+                  5-card stack: h-44 grid (176px) + translate-y-32 overflow (128px) = 304px visual.
+                  pt-14 (56px) + pb-48 (192px) creates a 424px zone so badges clear the stack.
                 */}
-                <div className="relative pt-14 pb-36">
+                <div className="relative pt-14 pb-48">
 
                   {/* Glow behind cards */}
                   <div className="absolute top-8 left-0 right-0 h-80 flex items-center justify-center pointer-events-none -z-10">
@@ -265,23 +264,19 @@ export default function HomePage() {
                   {/* Stacked display cards */}
                   <DisplayCards />
 
-                  {/* "50+ happy clients" — floats above top-left of stack */}
+                  {/* "500+ campaigns executed" — floats above top-left of stack */}
                   <motion.div
                     className="absolute -top-2 -left-4 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-[#f472b6]/20"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 text-[#f472b6] fill-[#f472b6]" />
-                      ))}
-                    </div>
-                    <span className="text-white/60 text-sm font-semibold">50+ happy clients</span>
+                    <Rocket className="w-3.5 h-3.5 text-[#f472b6]" />
+                    <span className="text-white/60 text-sm font-semibold">500+ campaigns executed</span>
                   </motion.div>
 
-                  {/* "New inquiry received" — floats below bottom-right of stack */}
+                  {/* "New inquiry received" — floats below the stack */}
                   <motion.div
-                    className="absolute -bottom-2 right-8 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-green-500/20"
+                    className="absolute bottom-2 right-8 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-green-500/20"
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                   >
