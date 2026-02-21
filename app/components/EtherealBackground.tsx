@@ -1,130 +1,158 @@
-import { useEffect, useId, useRef, memo } from 'react';
+import { useRef, useId, useEffect, CSSProperties } from 'react';
+import { animate, useMotionValue, type AnimationPlaybackControls } from 'motion/react';
 
-/**
- * Full-page animated background.
- * Three blurred colour blobs (pink / blue / purple — site palette) are
- * distorted by an SVG feTurbulence + feDisplacementMap filter whose
- * baseFrequency is advanced each frame, creating a slow organic morph.
- * The whole layer is fixed at z-0; all page content sits above it.
- *
- * The turbulence attribute is mutated directly via ref — no React state,
- * no re-renders, no layout thrash.
- */
-const EtherealBackground = memo(function EtherealBackground() {
-  const raw = useId();
-  // IDs used in SVG/CSS must not contain colons
-  const uid = raw.replace(/[^a-zA-Z0-9]/g, '_');
-  const filterId = `eb_${uid}`;
+// Blob silhouette mask — same source the original 21st.dev component uses
+const BLOB_MASK = "url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png')";
 
-  const turbRef = useRef<SVGFETurbulenceElement>(null);
+function mapRange(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
+  if (fromLow === fromHigh) return toLow;
+  return toLow + ((value - fromLow) / (fromHigh - fromLow)) * (toHigh - toLow);
+}
+
+interface BlobProps {
+  color: string;
+  style?: CSSProperties;
+  scale?: number;  // 1–100, controls displacement intensity
+  speed?: number;  // 1–100, controls hue rotation speed
+  seed?: number;
+}
+
+function EtherealBlob({ color, style, scale = 45, speed = 22, seed = 0 }: BlobProps) {
+  const rawId = useId();
+  const id = `eb_${rawId.replace(/[^a-zA-Z0-9]/g, '_')}`;
+
+  const feColorMatrixRef = useRef<SVGFEColorMatrixElement>(null);
+  const hueMotion = useMotionValue(180);
+  const animCtrl = useRef<AnimationPlaybackControls | null>(null);
+
+  // Map scale/speed to filter values, matching the original component's ranges
+  const dispScale  = mapRange(scale, 1, 100, 20, 100);
+  const duration   = mapRange(speed, 1, 100, 1000, 50) / 25;
+  const freqX      = mapRange(scale, 0, 100, 0.001, 0.0005);
+  const freqY      = mapRange(scale, 0, 100, 0.004, 0.002);
 
   useEffect(() => {
-    let t = 0;
-    let raf: number;
-
-    const tick = () => {
-      t += 0.00030;
-      if (turbRef.current) {
-        const bx = (0.0065 + Math.sin(t * 0.7)  * 0.0022).toFixed(5);
-        const by = (0.0048 + Math.cos(t * 0.55) * 0.0018).toFixed(5);
-        turbRef.current.setAttribute('baseFrequency', `${bx} ${by}`);
-      }
-      raf = requestAnimationFrame(tick);
-    };
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+    animCtrl.current?.stop();
+    hueMotion.set(0);
+    animCtrl.current = animate(hueMotion, 360, {
+      duration,
+      repeat: Infinity,
+      repeatType: 'loop',
+      ease: 'linear',
+      onUpdate: (v) => feColorMatrixRef.current?.setAttribute('values', String(v)),
+    });
+    return () => animCtrl.current?.stop();
+  }, [scale, speed]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div
-      className="fixed inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: 0 }}
-      aria-hidden="true"
-    >
-      {/* ── Filter definition (zero size, not painted) ─────────────────── */}
-      <svg
-        className="absolute"
-        style={{ width: 0, height: 0, overflow: 'hidden' }}
-        focusable="false"
-      >
-        <defs>
-          <filter
-            id={filterId}
-            x="-30%"
-            y="-30%"
-            width="160%"
-            height="160%"
-            colorInterpolationFilters="sRGB"
-          >
-            <feTurbulence
-              ref={turbRef}
-              type="fractalNoise"
-              baseFrequency="0.0065 0.0048"
-              numOctaves="3"
-              seed="7"
-              result="noise"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="60"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </defs>
-      </svg>
-
-      {/* ── Blob layer — displacement is applied to the composite ──────── */}
+    <div style={{ position: 'absolute', overflow: 'hidden', ...style }}>
+      {/* inset by dispScale so the displaced edges don't get clipped */}
       <div
-        className="absolute inset-0"
-        style={{ filter: `url(#${filterId})` }}
+        style={{
+          position: 'absolute',
+          inset: -dispScale,
+          filter: `url(#${id}) blur(4px)`,
+        }}
       >
-        {/* Pink — top-left */}
-        <div
-          className="absolute"
-          style={{
-            width: 720,
-            height: 720,
-            top: -260,
-            left: -260,
-            borderRadius: '42% 58% 65% 35% / 45% 52% 48% 55%',
-            background: 'rgba(244, 114, 182, 0.22)',
-            filter: 'blur(90px)',
-          }}
-        />
+        {/* Filter lives inside each blob so multiple instances don't clash */}
+        <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+          <defs>
+            <filter id={id}>
+              {/* 1. Generate organic noise */}
+              <feTurbulence
+                result="undulation"
+                numOctaves="2"
+                baseFrequency={`${freqX},${freqY}`}
+                seed={seed}
+                type="turbulence"
+              />
+              {/* 2. Rotate hue over time → drives the displacement */}
+              <feColorMatrix
+                ref={feColorMatrixRef}
+                in="undulation"
+                result="rotated"
+                type="hueRotate"
+                values="180"
+              />
+              {/* 3. Amplify channels to create strong displacement vectors */}
+              <feColorMatrix
+                in="rotated"
+                result="circulation"
+                type="matrix"
+                values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"
+              />
+              {/* 4 + 5. Double displacement for a deeper organic warp */}
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="circulation"
+                scale={dispScale}
+                result="dist"
+              />
+              <feDisplacementMap
+                in="dist"
+                in2="undulation"
+                scale={dispScale}
+                result="output"
+              />
+            </filter>
+          </defs>
+        </svg>
 
-        {/* Blue — bottom-right */}
+        {/* The coloured blob shape, cut out by the mask */}
         <div
-          className="absolute"
           style={{
-            width: 720,
-            height: 720,
-            bottom: -260,
-            right: -260,
-            borderRadius: '58% 42% 35% 65% / 55% 30% 70% 45%',
-            background: 'rgba(59, 130, 246, 0.20)',
-            filter: 'blur(90px)',
-          }}
-        />
-
-        {/* Purple — centre */}
-        <div
-          className="absolute"
-          style={{
-            width: 620,
-            height: 620,
-            top: '22%',
-            right: '8%',
-            borderRadius: '50% 50% 45% 55% / 55% 45% 55% 45%',
-            background: 'rgba(168, 85, 247, 0.14)',
-            filter: 'blur(110px)',
+            backgroundColor: color,
+            maskImage: BLOB_MASK,
+            WebkitMaskImage: BLOB_MASK,
+            maskSize: 'cover',
+            WebkitMaskSize: 'cover',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            maskPosition: 'center',
+            WebkitMaskPosition: 'center',
+            width: '100%',
+            height: '100%',
           }}
         />
       </div>
     </div>
   );
-});
+}
 
-export default EtherealBackground;
+/** Fixed full-page background. All page content sits at z-10+. */
+export default function EtherealBackground() {
+  return (
+    <div
+      className="fixed inset-0 pointer-events-none overflow-hidden"
+      style={{ zIndex: 0 }}
+      aria-hidden="true"
+    >
+      {/* Pink — top-left */}
+      <EtherealBlob
+        color="rgba(244, 114, 182, 0.45)"
+        scale={45}
+        speed={22}
+        seed={2}
+        style={{ width: '70vw', height: '70vw', top: '-18vw', left: '-18vw' }}
+      />
+
+      {/* Blue — bottom-right */}
+      <EtherealBlob
+        color="rgba(59, 130, 246, 0.40)"
+        scale={40}
+        speed={18}
+        seed={5}
+        style={{ width: '65vw', height: '65vw', bottom: '-18vw', right: '-18vw' }}
+      />
+
+      {/* Purple — centre */}
+      <EtherealBlob
+        color="rgba(168, 85, 247, 0.28)"
+        scale={35}
+        speed={28}
+        seed={9}
+        style={{ width: '55vw', height: '55vw', top: '15vh', right: '0vw' }}
+      />
+    </div>
+  );
+}
