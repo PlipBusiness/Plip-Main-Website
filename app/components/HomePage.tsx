@@ -250,11 +250,24 @@ export default function HomePage() {
 
               {/* Right Column — Display Cards */}
               <div className="relative w-full flex items-center justify-center z-10">
-                <div className="relative flex flex-col items-center gap-8">
+                {/*
+                  Card grid = h-44 (176px). Cards cascade +80px downward (translate-y-20).
+                  Visual stack height ~256px. pt-14 + pb-36 creates a 376px zone so
+                  absolutely-positioned badges sit cleanly above and below the stack.
+                */}
+                <div className="relative pt-14 pb-36">
 
-                  {/* Social proof chip */}
+                  {/* Glow behind cards */}
+                  <div className="absolute top-8 left-0 right-0 h-80 flex items-center justify-center pointer-events-none -z-10">
+                    <div className="w-96 h-64 rounded-full bg-gradient-to-r from-[#f472b6]/20 to-[#3b82f6]/20 blur-3xl" />
+                  </div>
+
+                  {/* Stacked display cards */}
+                  <DisplayCards />
+
+                  {/* "50+ happy clients" — floats above top-left of stack */}
                   <motion.div
-                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-[#f472b6]/20"
+                    className="absolute -top-2 -left-4 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-[#f472b6]/20"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -266,18 +279,9 @@ export default function HomePage() {
                     <span className="text-white/60 text-sm font-semibold">50+ happy clients</span>
                   </motion.div>
 
-                  {/* Stacked display cards */}
-                  <div className="relative">
-                    {/* Glow behind cards */}
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div className="w-96 h-64 rounded-full bg-gradient-to-r from-[#f472b6]/20 to-[#3b82f6]/20 blur-3xl" />
-                    </div>
-                    <DisplayCards />
-                  </div>
-
-                  {/* New inquiry badge */}
+                  {/* "New inquiry received" — floats below bottom-right of stack */}
                   <motion.div
-                    className="glass-card px-4 py-2.5 rounded-xl shadow-lg inline-flex items-center gap-2.5 border border-green-500/20"
+                    className="absolute -bottom-2 right-8 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-green-500/20"
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                   >

@@ -24,7 +24,7 @@ function DisplayCard({
 }: DisplayCardProps) {
   return (
     <div
-      className={`relative flex h-44 w-[28rem] -skew-y-[8deg] select-none flex-col justify-between rounded-2xl border bg-[#0d0d18]/90 backdrop-blur-sm px-5 py-5 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-80 after:bg-gradient-to-l after:from-[#0a0a0f] after:to-transparent after:content-[''] [&>*]:flex [&>*]:items-center [&>*]:gap-3 hover:border-white/20 ${borderColor} ${className}`}
+      className={`relative flex h-44 w-[28rem] -skew-y-[8deg] select-none flex-col justify-between rounded-2xl border bg-[#0d0d18]/90 backdrop-blur-sm px-5 py-5 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-80 after:rounded-r-2xl after:bg-gradient-to-l after:from-[#0a0a0f] after:to-transparent after:content-[''] [&>*]:flex [&>*]:items-center [&>*]:gap-3 hover:border-white/20 ${borderColor} ${className}`}
     >
       <div>
         <span className={`relative inline-flex rounded-full p-2 ${iconBg}`}>
@@ -52,7 +52,7 @@ export default function DisplayCards() {
         borderColor="border-[#3b82f6]/25"
       />
       <DisplayCard
-        className="[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        className="[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-10 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
         icon={<Mail className="w-5 h-5 text-[#f472b6]" />}
         title="Email Automation"
         description="Sequences that follow up 24/7"
