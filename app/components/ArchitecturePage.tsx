@@ -15,7 +15,7 @@ import { Link } from 'react-router';
 
 export default function ArchitecturePage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-[#f472b6] blur-[120px] opacity-20 -top-40 -right-40"></div>
@@ -58,7 +58,7 @@ export default function ArchitecturePage() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="w-full bg-[#050505] py-32 overflow-hidden relative">
+        <section className="w-full bg-[#06071a] py-32 overflow-hidden relative">
           <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Mission */}
             <div className="relative overflow-hidden">
@@ -279,7 +279,7 @@ export default function ArchitecturePage() {
         </section>
 
         {/* The Lifecycle of a Partnership */}
-        <section className="w-full bg-[#050505] py-32 relative">
+        <section className="w-full bg-[#06071a] py-32 relative">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Header */}
             <div className="text-center mb-20">

@@ -181,8 +181,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#12121a] to-[#1a1a2e] text-white overflow-x-hidden">
-      <div className="relative z-10">
+    <div className="min-h-screen bg-transparent text-white overflow-x-hidden relative z-10">
+      <div className="relative">
         <Navigation />
 
         {/* Hero Section */}

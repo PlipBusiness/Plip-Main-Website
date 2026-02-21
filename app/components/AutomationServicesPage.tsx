@@ -26,7 +26,7 @@ import { Link } from 'react-router';
 
 export default function AutomationServicesPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-[500px] h-[500px] rounded-full bg-[#a855f7] blur-[100px] opacity-25 top-[-150px] left-[-150px]"></div>

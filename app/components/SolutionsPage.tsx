@@ -25,7 +25,7 @@ import { Link } from 'react-router';
 
 export default function SolutionsPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-[500px] h-[500px] rounded-full bg-[#f472b6] blur-[80px] opacity-25 top-[-150px] left-[-150px]"></div>
@@ -121,7 +121,7 @@ export default function SolutionsPage() {
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   <div className="bg-white/5 h-6 rounded flex-1 ml-4 border border-white/5"></div>
                 </div>
-                <div className="bg-[#050505] rounded-lg border border-white/5 p-6 aspect-[4/3] flex flex-col gap-4 relative overflow-hidden">
+                <div className="bg-[#06071a] rounded-lg border border-white/5 p-6 aspect-[4/3] flex flex-col gap-4 relative overflow-hidden">
                   <div className="flex justify-between items-center">
                     <div className="w-20 h-6 bg-white/10 rounded"></div>
                     <div className="flex gap-2">
@@ -181,7 +181,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Precision Ad Targeting */}
-        <section className="w-full border-t border-white/5 bg-[#050505] py-24 px-6">
+        <section className="w-full border-t border-white/5 bg-[#06071a] py-24 px-6">
           <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Campaign Dashboard */}
             <div className="relative">
@@ -478,7 +478,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Ecosystem Integration */}
-        <section className="w-full bg-[#050505] py-32 px-6 relative overflow-hidden">
+        <section className="w-full bg-[#06071a] py-32 px-6 relative overflow-hidden">
           <div className="max-w-[1200px] mx-auto flex flex-col items-center">
             <div className="text-center mb-24 max-w-3xl relative z-10">
               <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
@@ -500,7 +500,7 @@ export default function SolutionsPage() {
 
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#050505] border-2 flex items-center justify-center text-[#f472b6] pillar-glow-pink mb-6 relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#06071a] border-2 flex items-center justify-center text-[#f472b6] pillar-glow-pink mb-6 relative">
                     <Globe className="w-8 h-8 icon-bright" />
                   </div>
                   <h3 className="text-white font-black text-sm tracking-tight mb-1">WEB ARCHITECTURE</h3>
@@ -508,7 +508,7 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#050505] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#06071a] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
                     <MousePointerClick className="w-8 h-8 icon-bright" />
                   </div>
                   <h3 className="text-white font-black text-sm tracking-tight mb-1">PAID TRAFFIC</h3>
@@ -516,7 +516,7 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#050505] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#06071a] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
                     <Bot className="w-8 h-8 icon-bright" />
                   </div>
                   <h3 className="text-white font-black text-sm tracking-tight mb-1">AUTOMATION</h3>
@@ -524,7 +524,7 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#050505] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#06071a] border-2 flex items-center justify-center text-[#3b82f6] pillar-glow-blue mb-6 relative">
                     <BarChart3 className="w-8 h-8 icon-bright" />
                   </div>
                   <h3 className="text-white font-black text-sm tracking-tight mb-1">DATA INSIGHTS</h3>

@@ -23,7 +23,7 @@ import { Link } from 'react-router';
 
 export default function PaidAdvertisingPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6] blur-[100px] opacity-25 top-[-150px] left-[-150px]"></div>
@@ -135,7 +135,7 @@ export default function PaidAdvertisingPage() {
         </section>
 
         {/* Our Approach */}
-        <section className="w-full border-t border-white/5 bg-[#050505] py-24 px-6">
+        <section className="w-full border-t border-white/5 bg-[#06071a] py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
@@ -349,7 +349,7 @@ export default function PaidAdvertisingPage() {
         </section>
 
         {/* Results Dashboard Visualization */}
-        <section className="w-full border-t border-white/5 bg-[#050505] py-24 px-6">
+        <section className="w-full border-t border-white/5 bg-[#06071a] py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">

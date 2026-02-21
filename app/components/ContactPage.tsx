@@ -59,7 +59,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white overflow-x-hidden relative z-10">
       {/* Blur Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-[500px] h-[500px] rounded-full bg-[#f472b6] blur-[80px] opacity-25 top-[-150px] left-[-150px]"></div>

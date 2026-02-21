@@ -12,7 +12,7 @@ export default function ServiceTabs() {
   ];
 
   return (
-    <div className="w-full border-b border-white/10 bg-[#050505]/80 backdrop-blur-md sticky top-[73px] z-40">
+    <div className="w-full border-b border-white/10 bg-[#06071a]/80 backdrop-blur-md sticky top-[73px] z-40">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex gap-1 overflow-x-auto justify-center">
           {tabs.map((tab, index) => (

@@ -4,6 +4,79 @@
 
 body {
   font-family: 'Epilogue', sans-serif;
+  /* Anchor the body to the site's midnight navy so scrolling never shows white */
+  background-color: #06071a;
+}
+
+/* ─── Site Background ────────────────────────────────────────────────────── */
+/*
+ * Three large radial "aurora" spots breathe via CSS opacity keyframes.
+ * All animations are opacity-only → fully GPU composited, near-zero CPU cost.
+ * A dot grid and static grain overlay add depth and tactile texture.
+ */
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #06071a;
+}
+
+/* Aurora spot 1: Pink — top-left, bleeds off screen */
+.site-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 65% at -8%  -8%,  rgba(244, 114, 182, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 80% at 108% 108%, rgba( 59, 130, 246, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at  62%  55%, rgba(168,  85, 247, 0.10) 0%, transparent 50%);
+  animation: aurora-a 22s ease-in-out infinite alternate;
+  will-change: opacity;
+}
+
+/* Aurora spot 2: complementary layer shifted for depth */
+.site-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 55% at 100%   0%,  rgba(168,  85, 247, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 60% at   0% 100%,  rgba( 59, 130, 246, 0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at  30%  20%,  rgba(244, 114, 182, 0.07) 0%, transparent 45%);
+  animation: aurora-a 30s ease-in-out infinite alternate-reverse;
+  will-change: opacity;
+}
+
+@keyframes aurora-a {
+  0%   { opacity: 1;    }
+  50%  { opacity: 0.55; }
+  100% { opacity: 0.9;  }
+}
+
+/* ── Dot grid — fades out as it reaches bottom ───────────────────────────── */
+.site-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  /* Mask: grid visible near top, fades out toward bottom-center */
+  mask-image: radial-gradient(ellipse 120% 60% at 50% 0%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 120% 60% at 50% 0%, black 0%, transparent 75%);
+  pointer-events: none;
+}
+
+/* ── Static grain — tactile texture, zero animation cost ─────────────────── */
+.site-bg-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  pointer-events: none;
 }
 
 /* Glassmorphism Effects */

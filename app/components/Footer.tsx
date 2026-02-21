@@ -4,7 +4,7 @@ import Logo from '@/app/components/Logo';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 py-12 px-6 lg:px-20 bg-[#050505]">
+    <footer className="w-full border-t border-white/10 py-12 px-6 lg:px-20 bg-[#06071a]">
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
         <div className="col-span-2 md:col-span-1 space-y-4">
           <div className="flex items-center gap-2 text-white">
