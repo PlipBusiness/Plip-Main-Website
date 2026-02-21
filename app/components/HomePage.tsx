@@ -192,147 +192,169 @@ export default function HomePage() {
         <Navigation />
 
         {/* Hero Section */}
-        <section className="w-full px-6 pt-20 pb-32 lg:pt-32 lg:pb-40">
+        <section className="w-full px-6 pt-20 pb-32 lg:pt-32 lg:pb-40 relative overflow-hidden">
+          {/* Subtle grid overlay */}
+          <div
+            className="absolute inset-0 opacity-[0.025] pointer-events-none"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+            }}
+          />
           <div className="max-w-[1440px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-center">
+
               {/* Left Column */}
               <div className="flex flex-col gap-8 text-left z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-badge text-white text-xs font-bold uppercase tracking-wider w-fit">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3b82f6] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3b82f6]"></span>
-                  </span>
-                  Full-Service Marketing Agency
+
+                {/* Social proof row */}
+                <div className="flex items-center gap-3 w-fit">
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-violet-500 border-2 border-[#0a0a0f] flex items-center justify-center text-white text-[10px] font-bold">W</div>
+                    <div className="w-8 h-8 rounded-full bg-pink-500 border-2 border-[#0a0a0f] flex items-center justify-center text-white text-[10px] font-bold">Y</div>
+                    <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-[#0a0a0f] flex items-center justify-center text-white text-[10px] font-bold">G</div>
+                    <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-[#0a0a0f] flex items-center justify-center text-white text-[10px] font-bold">C</div>
+                  </div>
+                  <div>
+                    <div className="flex gap-0.5 mb-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 text-[#f472b6] fill-[#f472b6]" />
+                      ))}
+                    </div>
+                    <p className="text-white/40 text-[11px] font-semibold">Trusted by 50+ businesses</p>
+                  </div>
                 </div>
 
-                <h1 className="text-white text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.02em]">
-                  The website your <br />
-                  <span className="cotton-candy-gradient">business deserves.</span>
+                <h1 className="text-white leading-[0.92] tracking-[-0.03em]">
+                  <span className="block text-5xl lg:text-[76px] font-black">Stop losing clients</span>
+                  <span className="block text-5xl lg:text-[76px] font-black cotton-candy-gradient">to a bad website.</span>
                 </h1>
 
-                <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-xl">
-                  We build high-converting websites and pair them with smart email automation — so your business keeps working long after you log off.
+                <p className="text-white/55 text-lg font-light leading-relaxed max-w-lg">
+                  Plip builds the site, sets up the automation, and makes your brand impossible to ignore — all under one roof.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                <div className="flex flex-col sm:flex-row gap-3 mt-1">
                   <Link to="/contact">
-                    <Button className="h-12 px-8 rounded-xl bg-[#3b82f6] hover:bg-blue-600 text-white font-bold text-base">
+                    <Button
+                      className="h-12 px-8 rounded-xl font-bold text-base text-white border-0 hover:opacity-90 transition-opacity"
+                      style={{ background: 'linear-gradient(135deg, #f472b6, #3b82f6)' }}
+                    >
                       Book a Free Call
                     </Button>
                   </Link>
                   <Link to="/services">
-                    <Button className="h-12 px-8 rounded-xl bg-black border-2 border-white text-white hover:bg-white/10 font-bold text-base">
+                    <Button className="h-12 px-8 rounded-xl bg-white/5 border border-white/15 text-white hover:bg-white/10 font-semibold text-base">
                       See Our Services
                     </Button>
                   </Link>
                 </div>
-
-                <div className="flex items-center gap-6 mt-6">
-                  <div className="flex items-center gap-3 px-4 py-2 rounded-full glass-badge">
-                    <Star className="w-4 h-4 text-[#f472b6] fill-[#f472b6]" />
-                    <div className="flex flex-col">
-                      <span className="text-white font-bold text-sm">8+ Years</span>
-                      <span className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Experience</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-2 rounded-full glass-badge">
-                    <Check className="w-4 h-4 text-[#10b981]" />
-                    <div className="flex flex-col">
-                      <span className="text-white font-bold text-sm">Free</span>
-                      <span className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Strategy Call</span>
-                    </div>
-                  </div>
-                </div>
               </div>
 
-              {/* Right Column - Browser Mockup */}
-              <div className="relative w-full h-full flex items-center justify-center lg:justify-end z-10">
-                <div className="relative w-full max-w-md mx-auto lg:mr-0 lg:ml-auto">
+              {/* Right Column — Deliverables Card */}
+              <div className="relative w-full flex items-center justify-center lg:justify-end z-10">
+                <div className="relative w-full max-w-[460px]">
 
-                  {/* Browser window */}
+                  {/* Main deliverables card */}
                   <motion.div
-                    className="glass-card rounded-3xl overflow-hidden shadow-2xl"
+                    className="glass-card rounded-3xl p-6 shadow-2xl border border-white/10"
                     animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    {/* Browser chrome bar */}
-                    <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
-                      <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500/70"></div>
+                    {/* Card header */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div>
+                        <p className="text-white/35 text-[9px] uppercase tracking-[0.15em] font-bold">Active Client Project</p>
+                        <p className="text-white font-bold text-sm mt-0.5">yourbusiness.com</p>
                       </div>
-                      <div className="flex-1 bg-white/5 rounded-md px-3 py-1.5 flex items-center gap-2 ml-2 border border-white/5">
-                        <div className="w-2 h-2 rounded-full bg-green-400/60"></div>
-                        <span className="text-white/25 text-[10px] font-mono tracking-wide">yourbusiness.com</span>
+                      <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/15 border border-green-500/25">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+                        <span className="text-green-400 text-[11px] font-bold">Live</span>
                       </div>
                     </div>
 
-                    {/* Website wireframe content */}
-                    <div className="bg-[#060608] p-5 space-y-4">
-                      {/* Fake nav */}
-                      <div className="flex items-center justify-between">
-                        <div className="w-14 h-4 bg-white/15 rounded"></div>
-                        <div className="flex gap-2 items-center">
-                          <div className="w-8 h-2.5 bg-white/8 rounded"></div>
-                          <div className="w-8 h-2.5 bg-white/8 rounded"></div>
-                          <div className="w-16 h-6 bg-[#3b82f6]/50 rounded-md"></div>
+                    {/* Service rows */}
+                    <div className="space-y-2.5">
+                      <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+                        <div className="w-9 h-9 rounded-xl bg-[#3b82f6]/15 border border-[#3b82f6]/25 flex items-center justify-center flex-shrink-0">
+                          <Maximize2 className="w-4 h-4 text-[#60a5fa]" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-white text-sm font-semibold">Website Design & Dev</p>
+                          <p className="text-white/35 text-[11px] mt-0.5">Built to convert visitors into clients</p>
+                        </div>
+                        <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-green-500/15 border border-green-500/25 flex-shrink-0">
+                          <Check className="w-3 h-3 text-green-400" />
+                          <span className="text-green-400 text-[10px] font-bold">Launched</span>
                         </div>
                       </div>
 
-                      {/* Fake hero text */}
-                      <div className="pt-3 space-y-2">
-                        <div className="w-4/5 h-5 bg-gradient-to-r from-white/20 to-white/5 rounded"></div>
-                        <div className="w-3/5 h-5 bg-gradient-to-r from-[#f472b6]/35 to-[#3b82f6]/20 rounded"></div>
-                        <div className="w-2/3 h-2.5 bg-white/6 rounded mt-2"></div>
-                        <div className="w-1/2 h-2.5 bg-white/6 rounded"></div>
-                        <div className="flex gap-2 mt-3">
-                          <div className="w-20 h-7 bg-[#f472b6]/50 rounded-lg"></div>
-                          <div className="w-18 h-7 bg-white/10 rounded-lg border border-white/10"></div>
+                      <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+                        <div className="w-9 h-9 rounded-xl bg-[#f472b6]/15 border border-[#f472b6]/25 flex items-center justify-center flex-shrink-0">
+                          <Mail className="w-4 h-4 text-[#f472b6]" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-white text-sm font-semibold">Email Automation</p>
+                          <p className="text-white/35 text-[11px] mt-0.5">Sequences that follow up 24/7</p>
+                        </div>
+                        <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f472b6]/15 border border-[#f472b6]/25 flex-shrink-0">
+                          <TrendingUp className="w-3 h-3 text-[#f472b6]" />
+                          <span className="text-[#f472b6] text-[10px] font-bold">Active</span>
                         </div>
                       </div>
 
-                      {/* Fake content blocks */}
-                      <div className="grid grid-cols-3 gap-2 pt-1">
-                        <div className="h-14 bg-white/5 rounded-lg border border-white/5"></div>
-                        <div className="h-14 bg-white/5 rounded-lg border border-white/5"></div>
-                        <div className="h-14 bg-white/5 rounded-lg border border-white/5"></div>
+                      <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+                        <div className="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center flex-shrink-0">
+                          <Crown className="w-4 h-4 text-purple-400" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-white text-sm font-semibold">Brand Identity</p>
+                          <p className="text-white/35 text-[11px] mt-0.5">Logo, colors, fonts & full brand kit</p>
+                        </div>
+                        <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-500/15 border border-purple-500/25 flex-shrink-0">
+                          <Star className="w-3 h-3 text-purple-400 fill-purple-400" />
+                          <span className="text-purple-400 text-[10px] font-bold">Delivered</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card footer */}
+                    <div className="mt-5 pt-4 border-t border-white/[0.08] flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <Rocket className="w-3.5 h-3.5 text-white/25" />
+                        <span className="text-white/35 text-[11px]">Avg. launch: <span className="text-white/60 font-semibold">14 days</span></span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Check className="w-3.5 h-3.5 text-[#10b981]" />
+                        <span className="text-white/60 font-semibold text-[11px]">500+ campaigns</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Floating badge — Site Launched */}
+                  {/* Floating badge — new inquiry */}
                   <motion.div
-                    className="absolute -right-6 top-6 glass-card px-3 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2 border border-green-500/20 bg-green-500/10"
+                    className="absolute -right-6 top-4 glass-card px-3 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2 border border-[#f472b6]/25 bg-[#f472b6]/[0.08]"
                     animate={{ y: [0, -8, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                    transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
                   >
-                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                    <span className="text-green-400 text-xs font-bold whitespace-nowrap">Site Launched</span>
-                  </motion.div>
-
-                  {/* Floating badge — Email Sequence */}
-                  <motion.div
-                    className="absolute -left-6 top-1/3 glass-card px-3 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2 border border-[#3b82f6]/20 bg-[#3b82f6]/10"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                  >
-                    <Mail className="w-3.5 h-3.5 text-[#60a5fa]" />
-                    <span className="text-[#60a5fa] text-xs font-bold whitespace-nowrap">Email sequence live</span>
-                  </motion.div>
-
-                  {/* Floating badge — New Inquiry */}
-                  <motion.div
-                    className="absolute -right-4 bottom-10 glass-card px-3 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2 border border-[#f472b6]/20 bg-[#f472b6]/10"
-                    animate={{ y: [0, -12, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-                  >
-                    <Rocket className="w-3.5 h-3.5 text-[#f472b6]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#f472b6] animate-pulse"></div>
                     <span className="text-[#f472b6] text-xs font-bold whitespace-nowrap">New inquiry received</span>
                   </motion.div>
 
+                  {/* Floating badge — experience */}
+                  <motion.div
+                    className="absolute -left-6 bottom-14 glass-card px-3 py-2 rounded-xl shadow-xl hidden lg:flex items-center gap-2 border border-[#3b82f6]/25 bg-[#3b82f6]/[0.08]"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.0 }}
+                  >
+                    <Star className="w-3 h-3 text-[#60a5fa] fill-[#60a5fa]" />
+                    <span className="text-[#60a5fa] text-xs font-bold whitespace-nowrap">8+ years of results</span>
+                  </motion.div>
+
                 </div>
               </div>
+
             </div>
           </div>
         </section>
