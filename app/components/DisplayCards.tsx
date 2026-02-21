@@ -56,7 +56,7 @@ export default function DisplayCards() {
 
       {/* Card 2 — Paid Advertising */}
       <DisplayCard
-        className="[grid-area:stack] translate-x-12 translate-y-8 hover:-translate-y-10 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        className="[grid-area:stack] translate-x-12 translate-y-8 hover:translate-y-0 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
         icon={<TrendingUp className="w-5 h-5 text-orange-400" />}
         title="Paid Advertising"
         description="Campaigns that drive real results"
