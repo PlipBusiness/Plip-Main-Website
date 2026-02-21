@@ -1,56 +1,48 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/app/components/ui/utils';
 
-interface GradientButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'ghost';
+const gradientButtonVariants = cva(
+  [
+    'gradient-button',
+    'inline-flex items-center justify-center gap-2',
+    'rounded-xl px-8 py-3',
+    'text-base font-bold text-white leading-snug',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f472b6]/50',
+    'disabled:pointer-events-none disabled:opacity-50',
+  ],
+  {
+    variants: {
+      variant: {
+        default: '',
+        ghost: 'gradient-button-ghost',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export interface GradientButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof gradientButtonVariants> {
+  asChild?: boolean;
 }
 
-const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>(
-  ({ className, variant = 'primary', children, ...props }, ref) => {
-    if (variant === 'ghost') {
-      return (
-        <button
-          ref={ref}
-          className={cn(
-            'inline-flex items-center justify-center gap-2',
-            'px-8 py-3 rounded-xl',
-            'text-white/80 hover:text-white font-bold text-base',
-            'transition-all duration-300 cursor-pointer',
-            'border border-white/15 hover:border-white/30',
-            'bg-white/5 hover:bg-white/10',
-            'hover:scale-[1.02] active:scale-[0.98]',
-            className
-          )}
-          {...props}
-        >
-          {children}
-        </button>
-      );
-    }
-
+const GradientButton = React.forwardRef<HTMLButtonElement, GradientButtonProps>(
+  ({ className, variant, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button';
     return (
-      <button
+      <Comp
+        className={cn(gradientButtonVariants({ variant, className }))}
         ref={ref}
-        className={cn(
-          'inline-flex items-center justify-center gap-2',
-          'px-8 py-3 rounded-xl',
-          'text-white font-bold text-base',
-          'transition-all duration-300 cursor-pointer',
-          'shadow-[0_0_20px_rgba(244,114,182,0.3),0_0_40px_rgba(59,130,246,0.15)]',
-          'hover:shadow-[0_0_30px_rgba(244,114,182,0.55),0_0_60px_rgba(59,130,246,0.3)]',
-          'hover:scale-[1.02] active:scale-[0.98]',
-          className
-        )}
-        style={{
-          background: 'linear-gradient(135deg, #f472b6 0%, #a855f7 50%, #3b82f6 100%)',
-        }}
         {...props}
-      >
-        {children}
-      </button>
+      />
     );
   }
 );
 
 GradientButton.displayName = 'GradientButton';
-export { GradientButton };
+export { GradientButton, gradientButtonVariants };
