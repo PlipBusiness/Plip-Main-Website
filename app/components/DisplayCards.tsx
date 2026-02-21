@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router';
 import { Globe, Mail, TrendingUp, Crown } from 'lucide-react';
 
 interface DisplayCardProps {
@@ -10,6 +11,7 @@ interface DisplayCardProps {
   iconBg?: string;
   titleColor?: string;
   borderColor?: string;
+  to?: string;
 }
 
 function DisplayCard({
@@ -21,11 +23,12 @@ function DisplayCard({
   iconBg = 'bg-blue-500/20',
   titleColor = 'text-blue-400',
   borderColor = 'border-white/10',
+  to,
 }: DisplayCardProps) {
-  return (
-    <div
-      className={`relative flex h-44 w-[28rem] -skew-y-[8deg] select-none flex-col justify-between rounded-2xl border bg-[#0d0d18]/90 backdrop-blur-sm px-5 py-5 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-80 after:rounded-r-2xl after:bg-gradient-to-l after:from-[#0a0a0f] after:to-transparent after:content-[''] [&>*]:flex [&>*]:items-center [&>*]:gap-3 hover:border-white/20 ${borderColor} ${className}`}
-    >
+  const cardClassName = `relative flex h-44 w-[28rem] -skew-y-[8deg] select-none flex-col justify-between rounded-2xl border bg-[#0d0d18]/90 backdrop-blur-sm px-5 py-5 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-80 after:rounded-r-2xl after:bg-gradient-to-l after:from-[#0a0a0f] after:to-transparent after:content-[''] [&>*]:flex [&>*]:items-center [&>*]:gap-3 hover:border-white/20 ${to ? 'cursor-pointer' : ''} ${borderColor} ${className}`;
+
+  const content = (
+    <>
       <div>
         <span className={`relative inline-flex rounded-full p-2 ${iconBg}`}>
           {icon}
@@ -34,8 +37,13 @@ function DisplayCard({
       </div>
       <p className="text-white/75 text-base whitespace-nowrap">{description}</p>
       <p className="text-white/30 text-sm">{status}</p>
-    </div>
+    </>
   );
+
+  if (to) {
+    return <Link to={to} className={cardClassName}>{content}</Link>;
+  }
+  return <div className={cardClassName}>{content}</div>;
 }
 
 export default function DisplayCards() {
@@ -52,6 +60,7 @@ export default function DisplayCards() {
         iconBg="bg-purple-500/20"
         titleColor="text-purple-400"
         borderColor="border-purple-500/25"
+        to="/services/branding"
       />
 
       {/* Card 2 — Paid Advertising */}
@@ -64,6 +73,7 @@ export default function DisplayCards() {
         iconBg="bg-orange-500/20"
         titleColor="text-orange-400"
         borderColor="border-orange-500/25"
+        to="/services/advertising"
       />
 
       {/* Card 3 — Email Automation */}
@@ -76,6 +86,7 @@ export default function DisplayCards() {
         iconBg="bg-[#f472b6]/20"
         titleColor="text-[#f472b6]"
         borderColor="border-[#f472b6]/25"
+        to="/services/automation"
       />
 
       {/* Card 4 — Website Design (front / upper-right, DOM last = highest z) */}
@@ -88,6 +99,7 @@ export default function DisplayCards() {
         iconBg="bg-[#3b82f6]/20"
         titleColor="text-[#60a5fa]"
         borderColor="border-[#3b82f6]/25"
+        to="/services/website"
       />
 
     </div>
