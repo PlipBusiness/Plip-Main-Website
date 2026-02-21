@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Globe, Mail, TrendingUp, Crown, Play } from 'lucide-react';
+import { Globe, Mail, TrendingUp, Crown } from 'lucide-react';
 
 interface DisplayCardProps {
   className?: string;
@@ -42,45 +42,9 @@ export default function DisplayCards() {
   return (
     <div className="grid [grid-template-areas:'stack'] place-items-center">
 
-      {/* Card 1 — Website Design (back/lower-left) */}
+      {/* Card 1 — Brand Identity (back / lower-left, DOM first = lowest z) */}
       <DisplayCard
-        className="[grid-area:stack] hover:-translate-y-24 hover:z-50 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
-        icon={<Globe className="w-5 h-5 text-[#60a5fa]" />}
-        title="Website Design & Dev"
-        description="Built to convert visitors into clients"
-        status="Design + Development"
-        iconBg="bg-[#3b82f6]/20"
-        titleColor="text-[#60a5fa]"
-        borderColor="border-[#3b82f6]/25"
-      />
-
-      {/* Card 2 — Email Automation */}
-      <DisplayCard
-        className="[grid-area:stack] translate-x-12 translate-y-8 hover:-translate-y-20 hover:z-40 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
-        icon={<Mail className="w-5 h-5 text-[#f472b6]" />}
-        title="Email Automation"
-        description="Sequences that follow up 24/7"
-        status="Done-for-you sequences"
-        iconBg="bg-[#f472b6]/20"
-        titleColor="text-[#f472b6]"
-        borderColor="border-[#f472b6]/25"
-      />
-
-      {/* Card 3 — Paid Advertising */}
-      <DisplayCard
-        className="[grid-area:stack] translate-x-24 translate-y-16 hover:-translate-y-16 hover:z-30 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
-        icon={<TrendingUp className="w-5 h-5 text-orange-400" />}
-        title="Paid Advertising"
-        description="Campaigns that drive real results"
-        status="Meta · Google · TikTok"
-        iconBg="bg-orange-500/20"
-        titleColor="text-orange-400"
-        borderColor="border-orange-500/25"
-      />
-
-      {/* Card 4 — Brand Identity */}
-      <DisplayCard
-        className="[grid-area:stack] translate-x-36 translate-y-24 hover:-translate-y-10 hover:z-20 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        className="[grid-area:stack] hover:-translate-y-20 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
         icon={<Crown className="w-5 h-5 text-purple-400" />}
         title="Brand Identity"
         description="Logo, colors & brand guidelines"
@@ -90,16 +54,40 @@ export default function DisplayCards() {
         borderColor="border-purple-500/25"
       />
 
-      {/* Card 5 — YouTube Management (front/upper-right) */}
+      {/* Card 2 — Paid Advertising */}
       <DisplayCard
-        className="[grid-area:stack] translate-x-48 translate-y-32 hover:translate-y-36"
-        icon={<Play className="w-5 h-5 text-rose-400" />}
-        title="YouTube Management"
-        description="Strategy, editing & channel growth"
-        status="Strategy · Editing · Growth"
-        iconBg="bg-rose-500/20"
-        titleColor="text-rose-400"
-        borderColor="border-rose-500/25"
+        className="[grid-area:stack] translate-x-12 translate-y-8 hover:-translate-y-10 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        icon={<TrendingUp className="w-5 h-5 text-orange-400" />}
+        title="Paid Advertising"
+        description="Campaigns that drive real results"
+        status="Meta · Google · TikTok"
+        iconBg="bg-orange-500/20"
+        titleColor="text-orange-400"
+        borderColor="border-orange-500/25"
+      />
+
+      {/* Card 3 — Email Automation */}
+      <DisplayCard
+        className="[grid-area:stack] translate-x-24 translate-y-16 hover:translate-y-4 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        icon={<Mail className="w-5 h-5 text-[#f472b6]" />}
+        title="Email Automation"
+        description="Sequences that follow up 24/7"
+        status="Done-for-you sequences"
+        iconBg="bg-[#f472b6]/20"
+        titleColor="text-[#f472b6]"
+        borderColor="border-[#f472b6]/25"
+      />
+
+      {/* Card 4 — Website Design (front / upper-right, DOM last = highest z) */}
+      <DisplayCard
+        className="[grid-area:stack] translate-x-36 translate-y-24 hover:translate-y-12"
+        icon={<Globe className="w-5 h-5 text-[#60a5fa]" />}
+        title="Website Design & Dev"
+        description="Built to convert visitors into clients"
+        status="Design + Development"
+        iconBg="bg-[#3b82f6]/20"
+        titleColor="text-[#60a5fa]"
+        borderColor="border-[#3b82f6]/25"
       />
 
     </div>
