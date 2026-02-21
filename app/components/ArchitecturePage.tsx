@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import { 
   Handshake, 
   Building2, 
@@ -44,14 +44,14 @@ export default function ArchitecturePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Link to="/contact">
-                <Button className="h-14 px-10 rounded-xl bg-white text-black font-bold text-lg hover:bg-gray-200 transition-colors">
+                <GradientButton className="h-14 px-10 text-lg">
                   Explore the Partnership
-                </Button>
+                </GradientButton>
               </Link>
               <Link to="/#testimonials">
-                <Button className="h-14 px-10 rounded-xl border-2 border-white bg-black text-white hover:bg-white/10 font-bold text-lg transition-colors">
+                <GradientButton variant="ghost" className="h-14 px-10 text-lg">
                   Our Impact Stories
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
@@ -417,9 +417,9 @@ export default function ArchitecturePage() {
               </p>
               <div className="relative z-10 flex items-center justify-center">
                 <Link to="/services">
-                  <Button className="px-10 py-5 bg-[#3b82f6] text-white text-lg font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-2xl shadow-[#3b82f6]/20">
+                  <GradientButton className="px-10 py-5 text-lg">
                     View Our Services
-                  </Button>
+                  </GradientButton>
                 </Link>
               </div>
             </div>

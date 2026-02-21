@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import { 
   Globe, 
   Code, 
@@ -51,10 +51,10 @@ export default function WebsiteServicesPage() {
 
             <div className="flex flex-wrap gap-4 items-center justify-center mt-4">
               <Link to="/contact">
-                <Button className="px-8 py-4 bg-[#3b82f6] hover:bg-blue-600 text-white text-lg font-bold rounded-xl cta-glow-blue flex items-center gap-2 group">
+                <GradientButton className="px-8 py-4 text-lg flex items-center gap-2 group">
                   Start Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
@@ -482,9 +482,9 @@ export default function WebsiteServicesPage() {
                   Let's create a website that doesn't just look good—it drives real results for your business.
                 </p>
                 <Link to="/contact">
-                  <Button className="px-10 py-4 bg-white text-black text-lg font-bold rounded-xl hover:bg-gray-200 transition-colors shadow-lg hover:shadow-white/20">
+                  <GradientButton className="px-10 py-4 text-lg">
                     Start Your Website Project
-                  </Button>
+                  </GradientButton>
                 </Link>
                 <p className="mt-6 text-xs text-white/30 font-bold uppercase tracking-widest">
                   Free Strategy Session • No Obligation

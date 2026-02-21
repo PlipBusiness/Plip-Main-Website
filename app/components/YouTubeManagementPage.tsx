@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import { 
   Youtube, 
   ArrowRight,
@@ -61,10 +61,10 @@ export default function YouTubeManagementPage() {
 
             <div className="flex flex-wrap gap-4 items-center justify-center mt-4">
               <Link to="/contact">
-                <Button className="px-8 py-4 bg-[#FF0000] hover:bg-red-600 text-white text-lg font-bold rounded-xl cta-glow-red flex items-center gap-2 group">
+                <GradientButton className="px-8 py-4 text-lg flex items-center gap-2 group">
                   Grow Your YouTube Channel
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
@@ -407,10 +407,10 @@ export default function YouTubeManagementPage() {
               Let's build your YouTube presence and turn viewers into subscribers. Get a free channel audit and growth strategy consultation.
             </p>
             <Link to="/contact">
-              <Button className="px-10 py-5 bg-[#FF0000] hover:bg-red-600 text-white text-xl font-bold rounded-xl cta-glow-red flex items-center gap-2 group mx-auto w-fit">
+              <GradientButton className="px-10 py-5 text-xl flex items-center gap-2 group mx-auto w-fit">
                 Get Your Free Channel Audit
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </GradientButton>
             </Link>
           </div>
         </section>

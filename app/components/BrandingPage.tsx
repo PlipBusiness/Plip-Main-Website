@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import { 
   Palette, 
   ArrowRight,
@@ -55,10 +55,10 @@ export default function BrandingPage() {
 
             <div className="flex flex-wrap gap-4 items-center justify-center mt-4">
               <Link to="/contact">
-                <Button className="px-8 py-4 bg-[#a855f7] hover:bg-purple-600 text-white text-lg font-bold rounded-xl cta-glow-purple flex items-center gap-2 group">
+                <GradientButton className="px-8 py-4 text-lg flex items-center gap-2 group">
                   Start Your Brand Journey
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
@@ -404,10 +404,10 @@ export default function BrandingPage() {
               Let's create a brand identity that captures your vision and resonates with your audience. Get started with a free consultation today.
             </p>
             <Link to="/contact">
-              <Button className="px-10 py-5 bg-[#a855f7] hover:bg-purple-600 text-white text-xl font-bold rounded-xl cta-glow-purple flex items-center gap-2 group mx-auto w-fit">
+              <GradientButton className="px-10 py-5 text-xl flex items-center gap-2 group mx-auto w-fit">
                 Get Your Free Brand Consultation
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </GradientButton>
             </Link>
           </div>
         </section>

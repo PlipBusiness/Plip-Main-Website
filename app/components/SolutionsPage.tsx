@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import {
   Globe,
   MousePointerClick,
@@ -103,10 +103,10 @@ export default function SolutionsPage() {
 
               <div className="mt-4">
                 <Link to="/services/website">
-                  <Button className="bg-[#3b82f6] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl cta-glow-blue flex items-center gap-2 group">
+                  <GradientButton className="py-3 px-8 flex items-center gap-2 group">
                     Get Started
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </GradientButton>
                 </Link>
               </div>
             </div>
@@ -289,10 +289,10 @@ export default function SolutionsPage() {
 
               <div className="mt-4">
                 <Link to="/services/advertising">
-                  <Button className="bg-[#3b82f6] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl cta-glow-blue flex items-center gap-2 group">
+                  <GradientButton className="py-3 px-8 flex items-center gap-2 group">
                     Get Started
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </GradientButton>
                 </Link>
               </div>
             </div>
@@ -345,10 +345,10 @@ export default function SolutionsPage() {
 
               <div className="mt-4">
                 <Link to="/contact">
-                  <Button className="bg-[#3b82f6] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl cta-glow-blue flex items-center gap-2 group">
+                  <GradientButton className="py-3 px-8 flex items-center gap-2 group">
                     Get Started
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </GradientButton>
                 </Link>
               </div>
             </div>
@@ -438,9 +438,9 @@ export default function SolutionsPage() {
                   Full-service channel growth including thumbnail design, video SEO, and engagement strategies to build a loyal subscriber base.
                 </p>
                 <Link to="/services/youtube">
-                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                  <GradientButton variant="ghost" className="w-fit px-6 py-2 text-xs self-start">
                     Learn more
-                  </button>
+                  </GradientButton>
                 </Link>
               </div>
 
@@ -453,9 +453,9 @@ export default function SolutionsPage() {
                   Memorable, scalable marks that define your brand instantly. Delivered with full vector files and usage guidelines.
                 </p>
                 <Link to="/services/branding">
-                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                  <GradientButton variant="ghost" className="w-fit px-6 py-2 text-xs self-start">
                     Learn more
-                  </button>
+                  </GradientButton>
                 </Link>
               </div>
 
@@ -468,9 +468,9 @@ export default function SolutionsPage() {
                   Cohesive visual systems including color palettes, typography, and voice guidelines to ensure consistency across all touchpoints.
                 </p>
                 <Link to="/services/branding">
-                  <button className="w-fit px-6 py-2 rounded-lg border border-white/10 text-white text-xs font-bold hover:bg-white/5 transition-all cta-glow-pink-blue self-start">
+                  <GradientButton variant="ghost" className="w-fit px-6 py-2 text-xs self-start">
                     Learn more
-                  </button>
+                  </GradientButton>
                 </Link>
               </div>
             </div>
@@ -561,9 +561,9 @@ export default function SolutionsPage() {
                   Every business is unique. Tell us about your goals, and we'll engineer a custom growth stack specifically for your market.
                 </p>
                 <Link to="/contact">
-                  <Button className="px-10 py-4 bg-white text-black text-lg font-bold rounded-xl hover:bg-gray-200 transition-colors shadow-lg hover:shadow-white/20">
+                  <GradientButton className="px-10 py-4 text-lg">
                     Get a Custom Quote
-                  </Button>
+                  </GradientButton>
                 </Link>
                 <p className="mt-6 text-xs text-white/30 font-bold uppercase tracking-widest">
                   Response time: &lt; 24 Hours

@@ -1,6 +1,6 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { Button } from '@/app/components/ui/button';
+import { GradientButton } from '@/app/components/GradientButton';
 import { 
   Workflow, 
   Mail,
@@ -56,10 +56,10 @@ export default function AutomationServicesPage() {
 
             <div className="flex flex-wrap gap-4 items-center justify-center mt-4">
               <Link to="/contact">
-                <Button className="px-8 py-4 bg-[#3b82f6] hover:bg-blue-600 text-white text-lg font-bold rounded-xl cta-glow-blue flex items-center gap-2 group">
+                <GradientButton className="px-8 py-4 text-lg flex items-center gap-2 group">
                   Automate Your Marketing
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </GradientButton>
               </Link>
             </div>
           </div>
@@ -328,10 +328,10 @@ export default function AutomationServicesPage() {
                     Let's build a custom automation system tailored to your business. We'll audit your current processes and identify opportunities to save time and increase revenue.
                   </p>
                   <Link to="/contact">
-                    <Button className="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-bold py-4 rounded-xl cta-glow-blue flex items-center justify-center gap-2 group">
+                    <GradientButton className="w-full py-4 flex items-center justify-center gap-2 group">
                       Get Your Free Automation Audit
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    </GradientButton>
                   </Link>
                 </div>
               </div>
@@ -401,10 +401,10 @@ export default function AutomationServicesPage() {
               Book a free consultation and we'll show you exactly how automation can transform your marketing—no fluff, just actionable strategies.
             </p>
             <Link to="/contact">
-              <Button className="px-10 py-5 bg-[#3b82f6] hover:bg-blue-600 text-white text-lg font-bold rounded-xl cta-glow-blue inline-flex items-center gap-2 group">
+              <GradientButton className="px-10 py-5 text-lg inline-flex items-center gap-2 group">
                 Schedule Your Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </GradientButton>
             </Link>
           </div>
         </section>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Button } from '@/app/components/ui/button';
 import { Card } from '@/app/components/ui/card';
 import { Play, Check, Star, TrendingUp, Maximize2, Mail, Crown, Rocket, Quote } from 'lucide-react';
 import Navigation from '@/app/components/Navigation';
@@ -220,14 +219,14 @@ export default function HomePage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <Link to="/contact">
-                    <Button className="h-12 px-8 rounded-xl bg-[#3b82f6] hover:bg-blue-600 text-white font-bold text-base">
+                    <GradientButton className="h-12 px-8 text-base">
                       Book a Free Call
-                    </Button>
+                    </GradientButton>
                   </Link>
                   <Link to="/services">
-                    <Button className="h-12 px-8 rounded-xl bg-black border-2 border-white text-white hover:bg-white/10 font-bold text-base">
+                    <GradientButton variant="ghost" className="h-12 px-8 text-base">
                       See Our Services
-                    </Button>
+                    </GradientButton>
                   </Link>
                 </div>
 
