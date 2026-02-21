@@ -15,7 +15,9 @@ import {
   Users,
   Rocket,
   Settings,
-  X
+  X,
+  Phone,
+  MessageSquare
 } from 'lucide-react';
 import { useState } from 'react';
 import { PopupModal } from 'react-calendly';
@@ -24,6 +26,8 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
+    phone: '',
+    contactPreference: 'email',
     niche: 'Real Estate',
     message: ''
   });
@@ -45,7 +49,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ fullName: '', email: '', niche: 'Real Estate', message: '' });
+        setFormData({ fullName: '', email: '', phone: '', contactPreference: 'email', niche: 'Real Estate', message: '' });
       } else {
         alert('There was an error submitting your form. Please try again.');
       }
@@ -135,6 +139,51 @@ export default function ContactPage() {
                     className="w-full h-12 bg-white/5 border border-white/10 rounded-xl px-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#f472b6] transition-colors input-glow"
                     required
                   />
+                </div>
+
+                {/* Phone Number */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-bold uppercase tracking-wider text-white/50 ml-1">
+                    Phone Number
+                  </label>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="(555) 867-5309"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full h-12 bg-white/5 border border-white/10 rounded-xl px-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#f472b6] transition-colors input-glow"
+                    required
+                  />
+                </div>
+
+                {/* Contact Preference */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-bold uppercase tracking-wider text-white/50 ml-1">
+                    Preferred Contact Method
+                  </label>
+                  <input type="hidden" name="contactPreference" value={formData.contactPreference} />
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { value: 'text', label: 'Text', icon: <MessageSquare className="w-4 h-4" /> },
+                      { value: 'call', label: 'Call', icon: <Phone className="w-4 h-4" /> },
+                      { value: 'email', label: 'Email', icon: <Mail className="w-4 h-4" /> },
+                    ].map(({ value, label, icon }) => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, contactPreference: value })}
+                        className={`flex items-center justify-center gap-2 h-11 rounded-xl border font-bold text-sm transition-all ${
+                          formData.contactPreference === value
+                            ? 'bg-[#f472b6]/20 border-[#f472b6] text-[#f472b6]'
+                            : 'bg-white/5 border-white/10 text-white/50 hover:border-white/30 hover:text-white/80'
+                        }`}
+                      >
+                        {icon}
+                        {label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Your Niche */}
