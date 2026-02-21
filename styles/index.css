@@ -25,6 +25,7 @@ body {
 }
 
 /* Aurora spot 1: Pink — top-left, bleeds off screen */
+/* NO will-change: backdrop-filter on glass cards needs the GPU fast path */
 .site-bg::before {
   content: '';
   position: absolute;
@@ -34,7 +35,6 @@ body {
     radial-gradient(ellipse 65% 80% at 108% 108%, rgba( 59, 130, 246, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 55% 50% at  62%  55%, rgba(168,  85, 247, 0.10) 0%, transparent 50%);
   animation: aurora-a 22s ease-in-out infinite alternate;
-  will-change: opacity;
 }
 
 /* Aurora spot 2: complementary layer shifted for depth */
@@ -47,7 +47,6 @@ body {
     radial-gradient(ellipse 45% 60% at   0% 100%,  rgba( 59, 130, 246, 0.09) 0%, transparent 50%),
     radial-gradient(ellipse 40% 40% at  30%  20%,  rgba(244, 114, 182, 0.07) 0%, transparent 45%);
   animation: aurora-a 30s ease-in-out infinite alternate-reverse;
-  will-change: opacity;
 }
 
 @keyframes aurora-a {
@@ -56,15 +55,38 @@ body {
   100% { opacity: 0.9;  }
 }
 
-/* ── Dot grid — fades out as it reaches bottom ───────────────────────────── */
+/* ── Speckles + diagonal lines ────────────────────────────────────────────
+ *  Layer 1: Large accent dots every 72px
+ *  Layer 2: Small dots offset by half-spacing — creates "random" starfield
+ *  Layer 3: Ultra-faint diagonal lines at −45° for precision/tech feel
+ * ─────────────────────────────────────────────────────────────────────── */
 .site-bg-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
-  /* Mask: grid visible near top, fades out toward bottom-center */
-  mask-image: radial-gradient(ellipse 120% 60% at 50% 0%, black 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 120% 60% at 50% 0%, black 0%, transparent 75%);
+  background-image:
+    /* Large speckle dots */
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px),
+    /* Small speckle dots — offset so they land between the large ones */
+    radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px,   transparent 1px),
+    /* Diagonal lines — barely visible, pure atmosphere */
+    repeating-linear-gradient(
+      -45deg,
+      transparent          0px,
+      transparent          26px,
+      rgba(255,255,255,0.018) 26px,
+      rgba(255,255,255,0.018) 27px
+    );
+  background-size:
+    72px  72px,   /* large dots grid   */
+    36px  36px,   /* small dots grid   */
+    52px  52px;   /* diagonal line gap */
+  background-position:
+    0    0,
+    18px 18px,
+    0    0;
+  /* Fade from full visibility at top to transparent ~70% down the viewport */
+  mask-image: radial-gradient(ellipse 130% 70% at 50% 0%, black 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 130% 70% at 50% 0%, black 0%, transparent 72%);
   pointer-events: none;
 }
 
