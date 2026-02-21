@@ -55,7 +55,7 @@ function EtherealBlob({ color, style, scale = 45, speed = 22, seed = 0 }: BlobPr
         }}
       >
         {/* Filter lives inside each blob so multiple instances don't clash */}
-        <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+        <svg style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'visible' }}>
           <defs>
             <filter id={id}>
               {/* 1. Generate organic noise */}
