@@ -182,13 +182,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#12121a] to-[#1a1a2e] text-white overflow-x-hidden">
-      {/* Blur Blobs - softer and more organic */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] bg-[#f472b6] blur-[100px] opacity-20 top-[-150px] left-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-[#3b82f6] blur-[100px] opacity-20 bottom-[-150px] right-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-[50%_50%_50%_50%_/_50%_50%_50%_50%] bg-purple-600 blur-[100px] opacity-15 top-[30%] right-[20%]"></div>
-      </div>
-
       <div className="relative z-10">
         <Navigation />
 
