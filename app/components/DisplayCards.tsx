@@ -68,7 +68,7 @@ export default function DisplayCards() {
 
       {/* Card 3 — Email Automation */}
       <DisplayCard
-        className="[grid-area:stack] translate-x-24 translate-y-16 hover:-translate-y-10 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
+        className="[grid-area:stack] translate-x-24 translate-y-16 hover:-translate-y-2 before:absolute before:w-full before:rounded-xl before:h-full before:content-[''] before:bg-[#0a0a0f]/60 grayscale-[80%] hover:before:opacity-0 before:transition-opacity before:z-10 before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
         icon={<Mail className="w-5 h-5 text-[#f472b6]" />}
         title="Email Automation"
         description="Sequences that follow up 24/7"
