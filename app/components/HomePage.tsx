@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Button } from '@/app/components/ui/button';
 import { Card } from '@/app/components/ui/card';
 import { Play, Check, Star, TrendingUp, Maximize2, Mail, Crown, Rocket, Quote } from 'lucide-react';
@@ -19,6 +19,25 @@ export default function HomePage() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [dragDistance, setDragDistance] = useState(0);
   const animationFrameRef = useRef<number | null>(null);
+
+  const niches = [
+    'Real Estate',
+    'Ecommerce',
+    'Retail',
+    'Restaurant',
+    'Lawncare',
+    'Automotive',
+    'Home Services',
+    'Photography',
+  ];
+  const [nicheIndex, setNicheIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNicheIndex((prev) => (prev + 1) % niches.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const testimonials = [
     {
@@ -207,7 +226,23 @@ export default function HomePage() {
 
                 <h1 className="text-white text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.02em]">
                   Dominating your <br />
-                  <span className="cotton-candy-gradient">market</span>
+                  <span className="inline-flex items-baseline gap-3">
+                    <span className="relative inline-block overflow-hidden" style={{ minWidth: '280px' }}>
+                      <AnimatePresence mode="wait">
+                        <motion.span
+                          key={nicheIndex}
+                          className="cotton-candy-gradient inline-block"
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -30 }}
+                          transition={{ duration: 0.35, ease: 'easeInOut' }}
+                        >
+                          {niches[nicheIndex]}
+                        </motion.span>
+                      </AnimatePresence>
+                    </span>
+                    <span className="text-white">market</span>
+                  </span>
                 </h1>
 
                 <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-xl">
