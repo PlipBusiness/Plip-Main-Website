@@ -207,7 +207,7 @@ export default function HomePage() {
 
                 <h1 className="text-white text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.02em]">
                   Dominating your <br />
-                  <span className="cotton-candy-gradient">real estate market</span>
+                  <span className="cotton-candy-gradient">market</span>
                 </h1>
 
                 <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-xl">
@@ -371,7 +371,7 @@ export default function HomePage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-4xl md:text-5xl font-black text-[#f472b6] mb-2">500+</div>
-                        <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Projects Delivered</div>
+                        <div className="text-xs text-white/50 font-bold uppercase tracking-widest">Campaigns Executed</div>
                       </div>
                       <div className="h-14 w-14 rounded-full glass-badge flex items-center justify-center">
                         <TrendingUp className="w-6 h-6 text-[#f472b6]" />

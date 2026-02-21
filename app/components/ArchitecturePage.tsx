@@ -133,8 +133,8 @@ export default function ArchitecturePage() {
                 <div className="text-[10px] font-bold text-[#3b82f6] tracking-widest uppercase">Businesses Scaled</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl lg:text-4xl font-black text-white">14+</div>
-                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Websites Designed</div>
+                <div className="text-3xl lg:text-4xl font-black text-white">8+</div>
+                <div className="text-[10px] font-bold text-green-400 tracking-widest uppercase">Years Experience</div>
               </div>
             </div>
           </div>
