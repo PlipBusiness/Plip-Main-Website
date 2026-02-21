@@ -264,9 +264,9 @@ export default function HomePage() {
                   {/* Stacked display cards */}
                   <DisplayCards />
 
-                  {/* "500+ campaigns executed" — floats above top-left of stack */}
+                  {/* "500+ campaigns executed" — floats upper-right, clear of hovering cards */}
                   <motion.div
-                    className="absolute -top-2 -left-4 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-[#f472b6]/20"
+                    className="absolute -top-2 right-2 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-[#f472b6]/20"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -274,14 +274,14 @@ export default function HomePage() {
                     <span className="text-white/60 text-sm font-semibold">500+ campaigns executed</span>
                   </motion.div>
 
-                  {/* "New inquiry received" — floats below the stack */}
+                  {/* "New lead captured" — floats below the stack */}
                   <motion.div
-                    className="absolute bottom-2 right-8 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-green-500/20"
+                    className="absolute bottom-2 left-4 glass-card px-4 py-2.5 rounded-xl shadow-lg hidden lg:inline-flex items-center gap-2.5 border border-green-500/20"
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                   >
                     <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0"></div>
-                    <span className="text-green-400 text-sm font-bold whitespace-nowrap">New inquiry received</span>
+                    <span className="text-green-400 text-sm font-bold whitespace-nowrap">New lead captured</span>
                   </motion.div>
 
                 </div>
