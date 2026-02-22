@@ -12,7 +12,6 @@ import {
   FileText,
   Award,
   Zap,
-  TrendingUp,
   Users,
   Paintbrush,
   Shapes,
@@ -339,49 +338,6 @@ export default function BrandingPage() {
                     Photography direction
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="w-full border-t border-white/5 py-24 px-6">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-                Why Choose <span className="cotton-candy-gradient">Plip</span> for Your Branding?
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#c084fc]/20 flex items-center justify-center text-[#a855f7] mb-4 mx-auto">
-                  <Award className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">8+ Years Experience</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Building brands from scratch and revising existing ones with proven design strategies.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#60a5fa]/20 flex items-center justify-center text-[#3b82f6] mb-4 mx-auto">
-                  <TrendingUp className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Strategic Approach</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Every design decision is backed by research and aligned with your business goals.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f472b6]/20 to-[#fb7185]/20 flex items-center justify-center text-[#f472b6] mb-4 mx-auto">
-                  <Sparkles className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Unlimited Revisions</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  We work until you're 100% satisfied with your brand identity.
-                </p>
               </div>
             </div>
           </div>
