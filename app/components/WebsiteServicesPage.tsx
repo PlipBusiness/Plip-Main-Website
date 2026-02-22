@@ -21,14 +21,7 @@ import { Link } from 'react-router';
 
 export default function WebsiteServicesPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-      {/* Blur Blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#f472b6] blur-[100px] opacity-25 top-[-150px] left-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6] blur-[100px] opacity-25 bottom-[-150px] right-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-purple-600 blur-[100px] opacity-20 top-[40%] left-[50%]"></div>
-      </div>
-
+    <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
       <div className="relative z-10">
         <Navigation />
 
@@ -143,7 +136,7 @@ export default function WebsiteServicesPage() {
         </section>
 
         {/* Our Process */}
-        <section className="w-full border-t border-white/5 bg-[#050505] py-24 px-6">
+        <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
@@ -336,7 +329,7 @@ export default function WebsiteServicesPage() {
         </section>
 
         {/* SEO Services Deep Dive */}
-        <section className="w-full border-t border-white/5 bg-[#050505] py-24 px-6">
+        <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
