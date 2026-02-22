@@ -107,8 +107,8 @@ export default function YouTubeManagementPage() {
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black cotton-candy-gradient mb-2">350K+</div>
-                <p className="text-white/60">Peak Subscribers on a Single Managed Channel</p>
+                <div className="text-5xl font-black cotton-candy-gradient mb-2">65+</div>
+                <p className="text-white/60">Videos Produced & Edited</p>
               </div>
 
               <div className="text-center">
