@@ -107,8 +107,8 @@ export default function YouTubeManagementPage() {
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black cotton-candy-gradient mb-2">65+</div>
-                <p className="text-white/60">Videos Produced & Edited</p>
+                <div className="text-5xl font-black cotton-candy-gradient mb-2">12M+</div>
+                <p className="text-white/60">Total Views Generated</p>
               </div>
 
               <div className="text-center">
