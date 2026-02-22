@@ -1,45 +1,72 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { GradientButton } from '@/app/components/GradientButton';
-import { 
-  Youtube, 
+import {
+  Youtube,
   ArrowRight,
   CheckCircle,
   TrendingUp,
   Target,
   BarChart3,
   Users,
-  Eye,
   Sparkles,
   Award,
   Video,
-  Film,
   Edit,
   MessageSquare,
-  ThumbsUp,
-  Bell,
   Search,
-  Lightbulb,
-  Camera,
-  Mic,
   Layers,
-  Clock,
-  DollarSign,
-  PlayCircle
+  Lightbulb,
+  FileSearch,
+  Map,
+  Clapperboard,
+  Megaphone,
+  LineChart,
 } from 'lucide-react';
 import { Link } from 'react-router';
 
+const steps = [
+  {
+    number: '01',
+    icon: FileSearch,
+    title: 'Channel Audit',
+    description:
+      "We deep-dive into your channel's analytics, content library, competitors, and niche — identifying exactly what's holding you back and where the growth opportunities are.",
+  },
+  {
+    number: '02',
+    icon: Map,
+    title: 'Strategy & Roadmap',
+    description:
+      'A custom content plan built around your goals: upload schedule, topic pillars, keyword targets, and growth milestones. No templates — built specifically for your channel.',
+  },
+  {
+    number: '03',
+    icon: Clapperboard,
+    title: 'Create & Produce',
+    description:
+      'Video production, editing, thumbnail design — any combination of our services, or all of them. Pick exactly what you need. Every deliverable is optimized for retention and CTR.',
+  },
+  {
+    number: '04',
+    icon: Megaphone,
+    title: 'Publish & Optimize',
+    description:
+      'SEO-optimized titles, descriptions, tags, and chapters. Community management and comment engagement. Every upload goes live algorithm-ready.',
+  },
+  {
+    number: '05',
+    icon: LineChart,
+    title: 'Analyze & Refine',
+    description:
+      'Monthly reporting with audience retention breakdowns, CTR analysis, and growth tracking. We use data from every video to sharpen the strategy continuously.',
+  },
+];
+
 export default function YouTubeManagementPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-      {/* Blur Blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#a855f7] blur-[100px] opacity-25 top-[-150px] left-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#3b82f6] blur-[100px] opacity-25 bottom-[-150px] right-[-150px]"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#f472b6] blur-[100px] opacity-20 top-[40%] left-[50%]"></div>
-      </div>
-
-      <div className="relative z-10">
+    <div className="min-h-screen bg-transparent text-white overflow-x-hidden relative z-10">
+      <div className="relative">
         <Navigation />
 
         {/* Hero Section */}
@@ -80,13 +107,13 @@ export default function YouTubeManagementPage() {
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black cotton-candy-gradient mb-2">1B+</div>
-                <p className="text-white/60">Hours Watched Daily</p>
+                <div className="text-5xl font-black cotton-candy-gradient mb-2">350K+</div>
+                <p className="text-white/60">Peak Subscribers on a Single Managed Channel</p>
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black cotton-candy-gradient mb-2">#2</div>
-                <p className="text-white/60">Most Visited Website</p>
+                <div className="text-5xl font-black cotton-candy-gradient mb-2">6+</div>
+                <p className="text-white/60">Years of YouTube Channel Management</p>
               </div>
             </div>
           </div>
@@ -282,115 +309,62 @@ export default function YouTubeManagementPage() {
           </div>
         </section>
 
-        {/* Content Strategy */}
+        {/* How It Works */}
         <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-                YouTube <span className="cotton-candy-gradient">Content Strategy</span>
+                How It <span className="cotton-candy-gradient">Works</span>
               </h2>
               <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                Strategic planning and execution to grow your channel consistently.
+                A structured process for every client — whether you need one service or all of them.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="widget-card p-8 rounded-2xl">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF0000]/20 to-[#FF0000]/10 flex items-center justify-center text-[#FF0000] mb-6">
-                  <Lightbulb className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Content Planning</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-4">
-                  Data-driven content strategies that align with audience interests and trending topics.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#FF0000] mt-0.5 flex-shrink-0" />
-                    Content calendar development
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#FF0000] mt-0.5 flex-shrink-0" />
-                    Topic research & ideation
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#FF0000] mt-0.5 flex-shrink-0" />
-                    Competitor analysis
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#FF0000] mt-0.5 flex-shrink-0" />
-                    Upload scheduling
-                  </li>
-                </ul>
-              </div>
+            {/* Steps */}
+            <div className="relative">
+              {/* Connector line — desktop only */}
+              <div className="hidden lg:block absolute top-[2.75rem] left-[calc(10%+2rem)] right-[calc(10%+2rem)] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
 
-              <div className="widget-card p-8 rounded-2xl">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#3b82f6]/20 to-[#60a5fa]/20 flex items-center justify-center text-[#3b82f6] mb-6">
-                  <BarChart3 className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Analytics & Growth</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-4">
-                  Comprehensive analytics tracking and optimization to maximize channel growth.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#3b82f6] mt-0.5 flex-shrink-0" />
-                    Performance tracking
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#3b82f6] mt-0.5 flex-shrink-0" />
-                    Audience retention analysis
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#3b82f6] mt-0.5 flex-shrink-0" />
-                    Monthly reporting
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-white/50">
-                    <CheckCircle className="w-4 h-4 text-[#3b82f6] mt-0.5 flex-shrink-0" />
-                    Growth strategy refinement
-                  </li>
-                </ul>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+                {steps.map((step, i) => {
+                  const Icon = step.icon;
+                  return (
+                    <div key={step.number} className="relative flex flex-col items-center lg:items-center text-center group">
+                      {/* Step number bubble */}
+                      <div className="relative mb-5 flex-shrink-0">
+                        <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-white/20 transition-colors duration-300">
+                          <Icon className="w-5 h-5 text-white/50 group-hover:text-white/80 transition-colors duration-300" />
+                        </div>
+                        {/* Step number badge */}
+                        <div
+                          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black text-white"
+                          style={{
+                            background: 'linear-gradient(135deg, #f472b6 0%, #a855f7 50%, #3b82f6 100%)',
+                          }}
+                        >
+                          {i + 1}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-base font-bold text-white mb-2 leading-tight">{step.title}</h3>
+                      <p className="text-white/50 text-xs leading-relaxed">{step.description}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Why Choose Us */}
-        <section className="w-full border-t border-white/5 py-24 px-6">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-                Why Choose <span className="cotton-candy-gradient">Plip</span> for YouTube?
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FF0000]/20 to-[#FF0000]/10 flex items-center justify-center text-[#FF0000] mb-4 mx-auto">
-                  <Award className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Proven Expertise</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  6+ years growing YouTube channels across multiple niches and industries.
-                </p>
+            {/* Modular callout */}
+            <div className="mt-14 flex items-start gap-4 max-w-2xl mx-auto widget-card rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f472b6]/20 to-[#3b82f6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Sparkles className="w-5 h-5 text-[#f472b6]" />
               </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#c084fc]/20 flex items-center justify-center text-[#a855f7] mb-4 mx-auto">
-                  <TrendingUp className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Data-Driven Growth</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Strategic optimization based on analytics, not guesswork.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#60a5fa]/20 flex items-center justify-center text-[#3b82f6] mb-4 mx-auto">
-                  <Sparkles className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">End-to-End Service</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  From production to publishing, we handle everything for you.
+              <div>
+                <p className="text-white font-semibold text-sm mb-1">Every service is available independently.</p>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  Need only editing and thumbnails? Done. Want full-service management from production to reporting? We handle that too. You choose exactly what you need.
                 </p>
               </div>
             </div>
@@ -398,7 +372,7 @@ export default function YouTubeManagementPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full border-t border-white/5 bg-black/40 py-24 px-6">
+        <section className="w-full border-t border-white/5 py-24 px-6">
           <div className="max-w-[800px] mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
               Ready to <span className="cotton-candy-gradient">Grow</span> Your YouTube Channel?
