@@ -1,6 +1,7 @@
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { GradientButton } from '@/app/components/GradientButton';
+import PlanBuilderSection from '@/app/components/PlanBuilderSection';
 import { 
   Handshake, 
   Building2, 
@@ -8,8 +9,6 @@ import {
   Zap, 
   Infinity, 
   ShieldCheck,
-  ArrowRight,
-  Quote
 } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -271,131 +270,7 @@ export default function ArchitecturePage() {
           </div>
         </section>
 
-        {/* The Lifecycle of a Partnership */}
-        <section className="w-full bg-[#06071a] py-32 relative">
-          <div className="max-w-[1400px] mx-auto px-6">
-            {/* Header */}
-            <div className="text-center mb-20">
-              <h2 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
-                Lifecycle of a Partnership
-              </h2>
-              <p className="text-white/40 text-base leading-relaxed max-w-2xl mx-auto">
-                Joining Plip is more than a service contract. It's an evolution. We've mapped the typical journey our partners take as they transition from manual struggle to automated dominance.
-              </p>
-            </div>
-
-            {/* Cards Grid */}
-            <div className="max-w-[1200px] mx-auto mb-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                {/* Card 01 */}
-                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c026d3] to-[#9333ea] flex items-center justify-center font-black text-white text-lg mb-6">
-                    01
-                  </div>
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-3xl font-bold text-white mb-2">Discovery</h3>
-                    <p className="text-[#c026d3] text-xs font-bold uppercase tracking-wider mb-4">MONTH 1</p>
-                    <p className="text-white/50 text-base leading-relaxed mb-auto">
-                      Deep-tissue audit of current tech. Identification of bottlenecks and architecture of your custom growth roadmap.
-                    </p>
-                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: STRATEGIC AUDIT</p>
-                  </div>
-                </div>
-
-                {/* Card 02 */}
-                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#6366f1] to-[#4f46e5] flex items-center justify-center font-black text-white text-lg mb-6">
-                    02
-                  </div>
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-3xl font-bold text-white mb-2">Foundation</h3>
-                    <p className="text-[#6366f1] text-xs font-bold uppercase tracking-wider mb-4">MONTHS 2-4</p>
-                    <p className="text-white/50 text-base leading-relaxed mb-auto">
-                      Engineering core automation. Core systems begin handling lead management, follow-ups, and CRM sync.
-                    </p>
-                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: CORE BUILD</p>
-                  </div>
-                </div>
-
-                {/* Card 03 */}
-                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] flex items-center justify-center font-black text-white text-lg mb-6">
-                    03
-                  </div>
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-3xl font-bold text-white mb-2">Optimization</h3>
-                    <p className="text-[#8b5cf6] text-xs font-bold uppercase tracking-wider mb-4">MONTHS 4-12</p>
-                    <p className="text-white/50 text-base leading-relaxed mb-auto">
-                      Pivoting to data-driven scale. Leveraging feedback loops to increase ROI and expand market footprint.
-                    </p>
-                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: SCALE & TEST</p>
-                  </div>
-                </div>
-
-                {/* Card 04 */}
-                <div className="p-10 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] flex flex-col min-h-[320px]">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ec4899] to-[#d946ef] flex items-center justify-center font-black text-white text-lg mb-6">
-                    04
-                  </div>
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-3xl font-bold text-white mb-2">Legacy Ops</h3>
-                    <p className="text-[#ec4899] text-xs font-bold uppercase tracking-wider mb-4">YEAR 1+</p>
-                    <p className="text-white/50 text-base leading-relaxed mb-auto">
-                      Strategic advisory role. Your business runs as a self-sustaining asset, allowing you to focus on high-level growth.
-                    </p>
-                    <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: ASSET STABILITY</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Performance Note */}
-            <div className="max-w-[800px] mx-auto">
-              <div className="p-8 rounded-3xl bg-[#1a1a1f] border border-white/[0.06] text-center">
-                <p className="text-[#3b82f6] text-[11px] font-bold uppercase tracking-wider mb-3">PERFORMANCE NOTE</p>
-                <p className="text-white/50 text-base leading-relaxed italic">
-                  85% of our partners achieve full system amortization within the first 6 months of implementation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Story */}
-        <section className="w-full py-32 bg-black/40 border-t border-white/5">
-          <div className="max-w-[800px] mx-auto px-6">
-            <div className="space-y-8 text-center">
-              <div className="space-y-4">
-                <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">About Plip</span>
-                <h2 className="text-5xl font-black text-white">Built on a Simple Idea</h2>
-                <p className="text-white/60 font-medium tracking-wide">Growth through systems, not guesswork</p>
-              </div>
-
-              <div className="space-y-6 text-white/50 leading-relaxed text-lg">
-                <p>
-                  Plip was founded in 2020 after recognizing that most businesses don't struggle because they lack traffic or ideas — they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
-                </p>
-                <p>
-                  We build the infrastructure behind growth: automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
-                </p>
-                <p>
-                  Plip exists to turn fragmented tools into a single, reliable growth machine.
-                </p>
-              </div>
-
-              <div className="flex gap-6 pt-4 justify-center max-w-md mx-auto">
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                  <div className="text-2xl font-black text-white">8+</div>
-                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Years Experience</div>
-                </div>
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex-1">
-                  <div className="text-2xl font-black text-white">192+</div>
-                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Businesses Scaled</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PlanBuilderSection />
 
         {/* CTA Section */}
         <section className="w-full py-32 relative overflow-hidden">
