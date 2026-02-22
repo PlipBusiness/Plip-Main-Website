@@ -552,7 +552,7 @@ export default function PaidAdvertisingPage() {
                   </GradientButton>
                 </Link>
                 <p className="mt-6 text-xs text-white/30 font-bold uppercase tracking-widest">
-                  Free Ad Account Audit • 30-Day Performance Guarantee
+                  Free Ad Account Audit Included
                 </p>
               </div>
             </div>

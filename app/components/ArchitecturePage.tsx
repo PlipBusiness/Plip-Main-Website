@@ -361,22 +361,22 @@ export default function ArchitecturePage() {
           </div>
         </section>
 
-        {/* Founder Spotlight */}
-        <section className="w-full py-32 bg-black border-t border-white/5">
+        {/* Our Story */}
+        <section className="w-full py-32 bg-black/40 border-t border-white/5">
           <div className="max-w-[800px] mx-auto px-6">
             <div className="space-y-8 text-center">
               <div className="space-y-4">
-                <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">Founder Spotlight</span>
-                <h2 className="text-5xl font-black text-white">Joe Teegarden</h2>
-                <p className="text-white/60 font-medium tracking-wide">Founder & Growth Architect</p>
+                <span className="text-[#f472b6] text-xs font-bold uppercase tracking-widest">About Plip</span>
+                <h2 className="text-5xl font-black text-white">Built on a Simple Idea</h2>
+                <p className="text-white/60 font-medium tracking-wide">Growth through systems, not guesswork</p>
               </div>
 
               <div className="space-y-6 text-white/50 leading-relaxed text-lg">
                 <p>
-                  I started Plip in 2020 after realizing that most businesses don't struggle because they lack traffic or ideas; they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
+                  Plip was founded in 2020 after recognizing that most businesses don't struggle because they lack traffic or ideas — they struggle because their systems don't work together. Leads get lost, follow-ups break, data lives in too many places, and owners end up spending their time managing chaos instead of growing.
                 </p>
                 <p>
-                  What I do is build the infrastructure behind growth; automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
+                  We build the infrastructure behind growth: automation, integrations, and internal systems that replace manual work and create clarity. Plip isn't about flashy campaigns or quick wins. It's about designing operations that run smoothly, scale intelligently, and free teams to focus on what actually matters.
                 </p>
                 <p>
                   Plip exists to turn fragmented tools into a single, reliable growth machine.

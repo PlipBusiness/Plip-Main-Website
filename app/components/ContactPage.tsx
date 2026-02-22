@@ -349,7 +349,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="text-lg font-bold text-white mb-2">Who will I be talking to?</h4>
                   <p className="text-white/60 leading-relaxed text-sm">
-                    You'll speak directly with Joe, the owner of Plip. We'll have a real conversation about your business goals and how we can help you achieve them.
+                    You'll speak directly with Plip's founder. We'll have a real conversation about your business goals and how we can help you achieve them.
                   </p>
                 </div>
               </div>
