@@ -110,7 +110,7 @@ export default function ArchitecturePage() {
         </section>
 
         {/* Stats Bar */}
-        <section className="w-full bg-[#0a0a0a] border-y border-white/5 py-12">
+        <section className="w-full bg-black/40 border-y border-white/5 py-12">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
               <div className="space-y-1">
@@ -311,7 +311,7 @@ export default function ArchitecturePage() {
                     <h3 className="text-3xl font-bold text-white mb-2">Foundation</h3>
                     <p className="text-[#6366f1] text-xs font-bold uppercase tracking-wider mb-4">MONTHS 2-4</p>
                     <p className="text-white/50 text-base leading-relaxed mb-auto">
-                      Engineering core automation. Your 'Digital Twin' begins handling prospecting, lead management, and sync.
+                      Engineering core automation. Core systems begin handling lead management, follow-ups, and CRM sync.
                     </p>
                     <p className="text-white/20 text-[11px] uppercase tracking-wider font-medium mt-6">PHASE: CORE BUILD</p>
                   </div>
@@ -406,7 +406,7 @@ export default function ArchitecturePage() {
                 Ready to <span className="cotton-candy-gradient">Automate?</span>
               </h2>
               <p className="text-white/60 text-xl mb-12 relative z-10 max-w-2xl mx-auto">
-                We only partner with agencies where our systems can deliver exponential growth. Let's see if we're a match.
+                We only partner with businesses where our systems can deliver exponential growth. Let's see if we're a match.
               </p>
               <div className="relative z-10 flex items-center justify-center">
                 <Link to="/services">
