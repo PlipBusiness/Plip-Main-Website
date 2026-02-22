@@ -41,6 +41,16 @@ export default function Footer() {
                 Marketing Automation
               </Link>
             </li>
+            <li>
+              <Link to="/services/branding" className="hover:text-[#3b82f6] transition-colors">
+                Branding
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/youtube" className="hover:text-[#3b82f6] transition-colors">
+                YouTube Management
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -96,12 +106,8 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-white/30 text-xs">© 2026 Plip LLC. All rights reserved.</p>
         <div className="flex gap-6 text-white/30 text-xs">
-          <a href="#" className="hover:text-white transition-colors">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-white transition-colors">
-            Terms of Service
-          </a>
+          <span>Privacy Policy (coming soon)</span>
+          <span>Terms of Service (coming soon)</span>
         </div>
       </div>
     </footer>

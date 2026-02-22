@@ -337,7 +337,7 @@ export default function SolutionsPage() {
               </ul>
 
               <div className="mt-4">
-                <Link to="/contact">
+                <Link to="/services/automation">
                   <GradientButton className="py-3 px-8 flex items-center gap-2 group">
                     Get Started
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
