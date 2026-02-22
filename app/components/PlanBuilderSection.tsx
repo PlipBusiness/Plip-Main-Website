@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const ALL_BLOCKS = [
   'Facebook / Instagram Ads',
@@ -75,33 +74,33 @@ export default function PlanBuilderSection() {
             Your Plan. <span className="cotton-candy-gradient">Your Services.</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
-            Every service works on its own. Combined, they work as a system. Pick a plan below to see how we'd approach it.
+            Every service works independently. Combined, they form a system. Pick a plan to see how we'd approach it.
           </p>
         </div>
 
-        {/* Plan Selector Buttons */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
+        {/* Plan Tabs */}
+        <div className="flex flex-wrap gap-3 justify-center mb-10">
           {PLANS.map(p => {
             const isActive = p.id === activeId;
             return (
               <button
                 key={p.id}
                 onClick={() => setActiveId(p.id)}
-                className="flex items-center gap-2.5 rounded-full px-5 py-3 border text-sm font-bold transition-all duration-300"
+                className="flex items-center gap-2.5 rounded-full px-6 py-3 border text-sm font-bold transition-all duration-300 cursor-pointer"
                 style={isActive ? {
-                  background: `${p.color}20`,
-                  borderColor: `${p.color}60`,
+                  background: `${p.color}22`,
+                  borderColor: p.color,
                   color: '#fff',
-                  boxShadow: `0 0 16px ${p.color}30`,
+                  boxShadow: `0 0 24px ${p.color}28`,
                 } : {
-                  background: '#1a1d21',
-                  borderColor: 'rgba(255,255,255,0.05)',
+                  background: 'rgba(255,255,255,0.03)',
+                  borderColor: 'rgba(255,255,255,0.08)',
                   color: 'rgba(255,255,255,0.4)',
                 }}
               >
                 <span
                   className="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-300"
-                  style={{ backgroundColor: isActive ? p.color : 'rgba(255,255,255,0.2)' }}
+                  style={{ backgroundColor: isActive ? p.color : 'rgba(255,255,255,0.18)' }}
                 />
                 {p.label}
               </button>
@@ -109,77 +108,113 @@ export default function PlanBuilderSection() {
           })}
         </div>
 
-        {/* Main Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+        {/* Main Card */}
+        <div className="rounded-3xl border border-white/[0.07] overflow-hidden" style={{ background: 'rgba(255,255,255,0.018)' }}>
+          <div
+            key={activeId}
+            className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.07]"
+            style={{ animation: 'planFadeIn 0.25s ease forwards' }}
+          >
 
-          {/* Left: Service Blocks */}
-          <div className="lg:col-span-2 space-y-3">
-            <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-4">Services in this plan</p>
-            <div className="flex flex-wrap gap-2">
-              {ALL_BLOCKS.map(block => {
-                const isActive = plan.blocks.includes(block);
-                return (
-                  <div
-                    key={block}
-                    className="flex items-center gap-2 rounded-full px-4 py-2 border text-xs font-bold transition-all duration-300"
-                    style={isActive ? {
-                      background: `${plan.color}15`,
-                      borderColor: `${plan.color}40`,
-                      color: 'rgba(255,255,255,0.9)',
-                    } : {
-                      background: '#1a1d21',
-                      borderColor: 'rgba(255,255,255,0.05)',
-                      color: 'rgba(255,255,255,0.2)',
-                    }}
-                  >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: isActive ? plan.color : 'rgba(255,255,255,0.15)' }}
-                    />
-                    {block}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden lg:flex lg:col-span-0 lg:flex-col items-center self-stretch justify-center px-2">
-            <div className="w-px flex-1 bg-white/5" />
-          </div>
-
-          {/* Right: Roadmap */}
-          <div className="lg:col-span-3 space-y-3">
-            <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-4">Sample roadmap</p>
-            {plan.roadmap.map((step, i) => (
-              <div key={`${plan.id}-${i}`} className="flex items-center gap-3">
-                <div
-                  className="flex items-center gap-3 flex-1 rounded-xl px-4 py-3 border text-sm font-medium text-white"
-                  style={{
-                    background: `${plan.color}10`,
-                    borderColor: `${plan.color}25`,
-                  }}
-                >
-                  <span
-                    className="text-xs font-black w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-white"
-                    style={{ background: plan.color }}
-                  >
-                    {i + 1}
-                  </span>
-                  {step}
-                </div>
-                {i < plan.roadmap.length - 1 && (
-                  <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: `${plan.color}50` }} />
-                )}
+            {/* Left: Service Blocks */}
+            <div className="p-8 lg:p-10">
+              <p className="text-white/25 text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
+                Services in this plan
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {ALL_BLOCKS.map(block => {
+                  const isActive = plan.blocks.includes(block);
+                  return (
+                    <div
+                      key={block}
+                      className="flex items-center gap-2 rounded-xl px-3 py-2.5 border text-xs font-semibold transition-all duration-300"
+                      style={isActive ? {
+                        background: `${plan.color}12`,
+                        borderColor: `${plan.color}38`,
+                        color: 'rgba(255,255,255,0.9)',
+                      } : {
+                        background: 'rgba(255,255,255,0.02)',
+                        borderColor: 'rgba(255,255,255,0.04)',
+                        color: 'rgba(255,255,255,0.18)',
+                      }}
+                    >
+                      <span
+                        className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300"
+                        style={{ backgroundColor: isActive ? plan.color : 'rgba(255,255,255,0.1)' }}
+                      />
+                      <span className="leading-tight">{block}</span>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-            <p className="pt-2 text-white/20 text-xs leading-relaxed">
-              Roadmaps are illustrative — your actual plan is built around your specific goals.
-            </p>
-          </div>
+            </div>
 
+            {/* Right: Roadmap */}
+            <div className="p-8 lg:p-10">
+              <p className="text-white/25 text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
+                Sample roadmap
+              </p>
+
+              <div className="relative pl-1">
+                {/* Vertical connector line */}
+                <div
+                  className="absolute left-[19px] top-4 w-px"
+                  style={{
+                    height: `calc(100% - 2.5rem)`,
+                    background: `linear-gradient(to bottom, ${plan.color}50, ${plan.color}08)`,
+                  }}
+                />
+
+                <div className="space-y-3">
+                  {plan.roadmap.map((step, i) => {
+                    const isFirst = i === 0;
+                    return (
+                      <div key={i} className="flex items-center gap-4 relative">
+                        {/* Step number circle */}
+                        <div
+                          className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-black flex-shrink-0 relative z-10 transition-all duration-300"
+                          style={{
+                            background: isFirst ? plan.color : `${plan.color}22`,
+                            border: `2px solid ${isFirst ? plan.color : `${plan.color}45`}`,
+                            color: isFirst ? '#fff' : plan.color,
+                          }}
+                        >
+                          {i + 1}
+                        </div>
+
+                        {/* Step label */}
+                        <div
+                          className="flex-1 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all duration-300"
+                          style={{
+                            background: isFirst ? `${plan.color}14` : `${plan.color}07`,
+                            borderColor: isFirst ? `${plan.color}38` : `${plan.color}16`,
+                            color: isFirst ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.58)',
+                          }}
+                        >
+                          {step}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <p className="mt-6 text-white/18 text-xs leading-relaxed pl-1">
+                Roadmaps are illustrative — your actual plan is built around your specific goals.
+              </p>
+            </div>
+
+          </div>
         </div>
+
       </div>
+
+      <style>{`
+        @keyframes planFadeIn {
+          from { opacity: 0; transform: translateY(4px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }
