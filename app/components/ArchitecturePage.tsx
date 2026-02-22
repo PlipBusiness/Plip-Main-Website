@@ -16,13 +16,6 @@ import { Link } from 'react-router';
 export default function ArchitecturePage() {
   return (
     <div className="min-h-screen bg-transparent relative z-10 text-white overflow-x-hidden">
-      {/* Blur Blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#f472b6] blur-[120px] opacity-20 -top-40 -right-40"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#60a5fa] blur-[120px] opacity-20 top-1/3 -left-60"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-purple-500/30 blur-[100px] opacity-20 bottom-20 right-1/4"></div>
-      </div>
-
       <div className="relative z-10">
         <Navigation />
 
