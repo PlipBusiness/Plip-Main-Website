@@ -41,16 +41,6 @@ export default function Footer() {
                 Marketing Automation
               </Link>
             </li>
-            <li>
-              <Link to="/services/branding" className="hover:text-[#3b82f6] transition-colors">
-                Branding
-              </Link>
-            </li>
-            <li>
-              <Link to="/services/youtube" className="hover:text-[#3b82f6] transition-colors">
-                YouTube Management
-              </Link>
-            </li>
           </ul>
         </div>
 
